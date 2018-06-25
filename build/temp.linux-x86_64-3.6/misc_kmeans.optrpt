@@ -1,0 +1,1753 @@
+Intel(R) Advisor can now assist with vectorization and show optimization
+  report messages with your source code.
+See "https://software.intel.com/en-us/intel-advisor-xe" for details.
+
+
+Begin optimization report for: __Pyx_ParseOptionalKeywords(PyObject *, PyObject ***, PyObject *, PyObject **, Py_ssize_t, const char *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(24584,9)
+   remark #15523: loop was not vectorized: loop control variable name was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(24615,13)
+   remark #15523: loop was not vectorized: loop control variable name was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(24631,17)
+   remark #15523: loop was not vectorized: loop control variable argname was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(24582,5)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_pw_11misc_kmeans_3print_res(PyObject *, PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(2902,7)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(2902,7)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_IternextUnpackEndCheck(PyObject *, Py_ssize_t)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(24997,16)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(24997,16)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_IterFinish(void)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(24961,13)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(24961,13)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_PyObject_to_MemoryviewSlice_dc_float(PyObject *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(27463,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(27463,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27248,9) inlined into misc_kmeans.c(27463,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27249,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27258,13) inlined into misc_kmeans.c(27463,15)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(27463,15)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_PyObject_to_MemoryviewSlice_dc_int(PyObject *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(27486,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(27486,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27248,9) inlined into misc_kmeans.c(27486,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27249,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27258,13) inlined into misc_kmeans.c(27486,15)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(27486,15)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_f_11misc_kmeans_ff_kmeans(__Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, __Pyx_memviewslice, int, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(4219,3)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at misc_kmeans.c(4231,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at misc_kmeans.c(4243,7)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4243,7)
+         remark #15300: LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4243,7)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at misc_kmeans.c(4277,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at misc_kmeans.c(4299,7)
+      <Peeled loop for vectorization, Multiversioned v1>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4299,7)
+      <Multiversioned v1>
+         remark #15300: LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4299,7)
+      <Alternate Alignment Vectorized Loop, Multiversioned v1>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4299,7)
+      <Remainder loop for vectorization, Multiversioned v1>
+         remark #15335: remainder loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4299,7)
+      <Multiversioned v2>
+         remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4299,7)
+      <Remainder, Multiversioned v2>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at misc_kmeans.c(4334,5)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at misc_kmeans.c(4378,9)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4378,9)
+         remark #15300: LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4378,9)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(4428,17)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at misc_kmeans.c(4466,25)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at misc_kmeans.c(4487,27)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4487,27)
+         remark #15300: LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4487,27)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(4487,27)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_pw_11misc_kmeans_9ff_kmeans(PyObject *, PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(4662,7)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_pf_11misc_kmeans_12python_kmeans(PyObject *, PyObject *, PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(5592,30)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(5686,30)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_PyFunction_FastCallDict(PyObject *, PyObject **, int, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(24742,5) inlined into misc_kmeans.c(24778,22)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between *args (24743:9) and fastlocals[i] (24744:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(24742,5) inlined into misc_kmeans.c(24778,22)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(24742,5) inlined into misc_kmeans.c(24786,21)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between *args (24743:9) and fastlocals[i] (24744:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(24742,5) inlined into misc_kmeans.c(24786,21)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_TypeTest(PyObject *, PyTypeObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(25341,9)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(25341,9)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx__GetBufferAndValidate(Py_buffer *, PyObject *, __Pyx_TypeInfo *, int, int, int, __Pyx_BufFmt_StackElem *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(25891,5)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_f_11misc_kmeans_cython_kmeans(PyArrayObject *, PyArrayObject *, PyArrayObject *, PyArrayObject *, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(6401,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(6406,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(6411,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(6416,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(6471,9)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at misc_kmeans.c(6653,11)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at misc_kmeans.c(6665,13)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6665,13)
+         remark #15300: LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6665,13)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at misc_kmeans.c(6700,11)
+      remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+      remark #15346: vector dependence: assumed ANTI dependence between __pyx_pybuffernd_clusters.rcbuffer->buf[__pyx_t_4] (6727:16) and __pyx_pybuffernd_pops.rcbuffer->buf[*(__pyx_pybuffernd_clusters. (6738:16)
+
+      LOOP BEGIN at misc_kmeans.c(6712,13)
+         remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+         remark #15346: vector dependence: assumed ANTI dependence between __pyx_pybuffernd_clusters.rcbuffer->buf[__pyx_t_4] (6727:16) and __pyx_pybuffernd_pops.rcbuffer->buf[*(__pyx_pybuffernd_clusters. (6738:16)
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6712,13)
+      <Remainder>
+      LOOP END
+   LOOP END
+
+   LOOP BEGIN at misc_kmeans.c(6751,11)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at misc_kmeans.c(6773,15)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6773,15)
+         remark #15300: LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6773,15)
+      <Remainder loop for vectorization>
+         remark #15301: REMAINDER LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6773,15)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(6500,23)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at misc_kmeans.c(6538,31)
+      remark #15542: loop was not vectorized: inner loop was already vectorized
+
+      LOOP BEGIN at misc_kmeans.c(6559,33)
+      <Peeled loop for vectorization>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6559,33)
+         remark #15300: LOOP WAS VECTORIZED
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6559,33)
+      <Alternate Alignment Vectorized Loop>
+      LOOP END
+
+      LOOP BEGIN at misc_kmeans.c(6559,33)
+      <Remainder loop for vectorization>
+      LOOP END
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_BufFmt_CheckString(__Pyx_BufFmt_Context *, const char *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(25784,11)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(25786,39) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25845,9)
+   remark #15523: loop was not vectorized: loop control variable ts was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25394,9) inlined into misc_kmeans.c(25853,24)
+   remark #15523: loop was not vectorized: loop control variable t was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(25810,11)
+   remark #15535: loop was not vectorized: loop contains switch statement. Consider using if-else statement.   [ misc_kmeans.c(25728,5) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_BufFmt_ProcessTypeChunk(__Pyx_BufFmt_Context *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(25600,5)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25600,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25649,7)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(25676,12)
+   remark #15535: loop was not vectorized: loop contains switch statement. Consider using if-else statement.   [ misc_kmeans.c(25438,3) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_buffmt_parse_array(__Pyx_BufFmt_Context *, const char **)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(25695,5)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+
+   LOOP BEGIN at misc_kmeans.c(25394,9) inlined into misc_kmeans.c(25700,18)
+      remark #15523: loop was not vectorized: loop control variable t was found, but loop iteration count cannot be computed before executing the loop
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_pw_11misc_kmeans_17cython_kmeans(PyObject *, PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(6916,7)
+   remark #15301: MATERIALIZED LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(6916,7)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(6936,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(6936,7)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(6937,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(6937,7)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(6938,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(6938,7)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(6939,7)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(6939,7)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_pf_11misc_kmeans_16cython_kmeans(PyObject *, PyArrayObject *, PyArrayObject *, PyArrayObject *, PyArrayObject *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(6982,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(6987,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(6992,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(6997,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_pw___pyx_MemviewEnum_1__reduce_cython__(PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26157,5) inlined into misc_kmeans.c(11473,13)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26158,9) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26161,5) inlined into misc_kmeans.c(11473,13)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26162,9) ]
+
+   LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(11473,13)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+   LOOP END
+
+   LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(11473,13)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(11473,13)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(11473,13)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_get_item_pointer(struct __pyx_memoryview_obj *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(12468,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(12468,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(12489,5)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memview_slice(struct __pyx_memoryview_obj *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(16737,5)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(17015,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(17015,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_IsSubtype(PyTypeObject *, PyTypeObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(26575,12)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26571,24) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_fromslice(__Pyx_memviewslice, int, PyObject *(*)(char *), int (*)(char *, PyObject *), int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(18995,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(19007,5) ]
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(19056,3)
+   remark #15535: loop was not vectorized: loop contains switch statement. Consider using if-else statement.   [ misc_kmeans.c(29011,7) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_slice_copy(struct __pyx_memoryview_obj *, __Pyx_memviewslice *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(19310,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_dst->shape[__pyx_t_4] (19320:6) and __pyx_v_suboffsets[__pyx_t_4] (19339:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_dst->shape[__pyx_t_4] (19320:6) and __pyx_v_strides[__pyx_t_4] (19329:6)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: _unellipsify(PyObject *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(16208,11)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between __pyx_t_7->ob_item (16211:13) and __pyx_t_7->ob_item[__pyx_temp] (16211:13)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(16208,11)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(16159,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(16159,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(16383,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between __pyx_t_3->ob_item (16386:9) and __pyx_t_3->ob_item[__pyx_temp] (16386:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(16383,7)
+<Remainder>
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(16255,7)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_is_slice(struct __pyx_memoryview_obj *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(12972,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(12972,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(13060,19)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(13060,19)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_setitem_slice_assignment(struct __pyx_memoryview_obj *, PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(13175,9)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(13175,9)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(13184,9)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(13184,9)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_get_slice_from_memoryview(struct __pyx_memoryview_obj *, __Pyx_memviewslice *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(19156,15)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(19156,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(19167,11)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(19167,11)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(19200,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_mslice->shape[__pyx_t_4] (19320:6) and __pyx_v_suboffsets[__pyx_t_4] (19339:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(19200,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(19200,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_mslice->shape[__pyx_t_4] (19320:6) and __pyx_v_strides[__pyx_t_4] (19329:6)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(19200,5)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_copy_contents(__Pyx_memviewslice, __Pyx_memviewslice, int, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(21451,3) inlined into misc_kmeans.c(20934,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_src.shape[__pyx_t_1+__pyx_v_offset] (21461:6) and __pyx_v_src.shape[__pyx_t_1] (21461:6)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21451,3) inlined into misc_kmeans.c(20934,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20934,5)
+<Peeled loop for vectorization, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20934,5)
+<Distributed chunk1>
+   remark #15301: PARTIAL LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20934,5)
+<Alternate Alignment Vectorized Loop, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20934,5)
+<Remainder loop for vectorization, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20934,5)
+<Distributed chunk2>
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_src.strides[__pyx_t_3] (21510:6) and __pyx_v_src.strides[0] (21510:6)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20934,5)
+<Remainder, Distributed chunk2>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21451,3) inlined into misc_kmeans.c(20963,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_dst.shape[__pyx_t_1+__pyx_v_offset] (21461:6) and __pyx_v_dst.shape[__pyx_t_1] (21461:6)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21451,3) inlined into misc_kmeans.c(20963,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20963,5)
+<Peeled loop for vectorization, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20963,5)
+<Distributed chunk1>
+   remark #15301: PARTIAL LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20963,5)
+<Alternate Alignment Vectorized Loop, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20963,5)
+<Remainder loop for vectorization, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20963,5)
+<Distributed chunk2>
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_dst.strides[__pyx_t_3] (21510:6) and __pyx_v_dst.strides[0] (21510:6)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21491,3) inlined into misc_kmeans.c(20963,5)
+<Remainder, Distributed chunk2>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21000,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(21059,164) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27190,5) inlined into misc_kmeans.c(21108,16)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27197,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27190,5) inlined into misc_kmeans.c(21108,16)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27197,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27172,5) inlined into misc_kmeans.c(21118,21)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27176,9) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27172,5) inlined into misc_kmeans.c(21184,18)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27176,9) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27172,5) inlined into misc_kmeans.c(21194,29)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27176,9) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27172,5) inlined into misc_kmeans.c(21213,18)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27176,9) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27172,5) inlined into misc_kmeans.c(21223,29)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27176,9) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21252,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between _py_decref_tmp->ob_refcnt (21698:9) and _py_decref_tmp->ob_refcnt (21698:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21252,7)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21252,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20097,3) inlined into misc_kmeans.c(21261,57)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20097,3) inlined into misc_kmeans.c(21261,57)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21270,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *__pyx_v_data->ob_refcnt (21678:9) and *__pyx_v_data->ob_refcnt (21678:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21270,7)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21270,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19647,3) inlined into misc_kmeans.c(21318,25)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(19658,5) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19698,3) inlined into misc_kmeans.c(21318,25)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(19709,5) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21357,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between _py_decref_tmp->ob_refcnt (21698:9) and _py_decref_tmp->ob_refcnt (21698:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21357,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21357,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21375,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *__pyx_v_data->ob_refcnt (21678:9) and *__pyx_v_data->ob_refcnt (21678:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21375,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(21375,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memslice_transpose(__Pyx_memviewslice *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(18275,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(18377,3) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_copy_data_to_temp(__Pyx_memviewslice *, __Pyx_memviewslice *, char, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(20097,3) inlined into misc_kmeans.c(20293,18)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20097,3) inlined into misc_kmeans.c(20293,18)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20360,3)
+<Peeled loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20360,3)
+<Multiversioned v1>
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20360,3)
+<Alternate Alignment Vectorized Loop, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20360,3)
+<Remainder loop for vectorization, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20360,3)
+<Multiversioned v2, Distributed chunk1>
+   remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20360,3)
+<Remainder, Multiversioned v2, Distributed chunk1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20360,3)
+<Multiversioned v2, Distributed chunk2>
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20360,3)
+<Remainder, Multiversioned v2, Distributed chunk2>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20168,5) inlined into misc_kmeans.c(20389,10)
+<Multiversioned v1>
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between __pyx_v_stride (20178:8) and __pyx_v_stride (20187:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20168,5) inlined into misc_kmeans.c(20389,10)
+<Remainder, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20168,5) inlined into misc_kmeans.c(20389,10)
+<Multiversioned v2>
+   remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20168,5) inlined into misc_kmeans.c(20389,10)
+<Remainder, Multiversioned v2>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20208,5) inlined into misc_kmeans.c(20389,10)
+<Multiversioned v1>
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between __pyx_v_stride (20218:8) and __pyx_v_stride (20227:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20208,5) inlined into misc_kmeans.c(20389,10)
+<Remainder, Multiversioned v1>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20208,5) inlined into misc_kmeans.c(20389,10)
+<Multiversioned v2>
+   remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20208,5) inlined into misc_kmeans.c(20389,10)
+<Remainder, Multiversioned v2>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20400,3)
+   remark #15335: loop was not vectorized: vectorization possible but seems inefficient. Use vector always directive or -vec-threshold0 to override 
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20400,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27172,5) inlined into misc_kmeans.c(20439,16)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27176,9) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19934,7) inlined into misc_kmeans.c(20469,5)
+   remark #15527: loop was not vectorized: function call to memcpy(void *__restrict__, const void *__restrict__, size_t) cannot be vectorized   [ misc_kmeans.c(19944,16) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19987,5) inlined into misc_kmeans.c(20469,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: _copy_strided_to_strided(char *, Py_ssize_t *, char *, Py_ssize_t *, Py_ssize_t *, Py_ssize_t *, int, size_t)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(19934,7)
+   remark #15527: loop was not vectorized: function call to memcpy(void *__restrict__, const void *__restrict__, size_t) cannot be vectorized   [ misc_kmeans.c(19944,16) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19987,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_get_best_slice_order(__Pyx_memviewslice *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(19647,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(19658,5) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19698,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(19709,5) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_refcount_objects_in_slice(char *, Py_ssize_t *, Py_ssize_t *, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(21648,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *__pyx_v_data->ob_refcnt (21678:9) and *__pyx_v_strides (21739:5)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between _py_decref_tmp->ob_refcnt (21698:9) and _py_decref_tmp->ob_refcnt (21698:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_setitem_slice_assign_scalar(struct __pyx_memoryview_obj *, struct __pyx_memoryview_obj *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(16489,3) inlined into misc_kmeans.c(13426,19)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(16501,5) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(13446,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between _py_decref_tmp->ob_refcnt (21698:9) and _py_decref_tmp->ob_refcnt (21698:9)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(13446,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(13446,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21856,5) inlined into misc_kmeans.c(13446,5)
+   remark #15527: loop was not vectorized: function call to memcpy(void *__restrict__, const void *__restrict__, size_t) cannot be vectorized   [ misc_kmeans.c(21866,14) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21898,5) inlined into misc_kmeans.c(13446,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(13446,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *__pyx_v_data->ob_refcnt (21678:9) and *__pyx_v_strides (21739:5)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(13446,5)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(13446,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview__slice_assign_scalar(char *, Py_ssize_t *, Py_ssize_t *, int, size_t, void *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(21856,5)
+   remark #15527: loop was not vectorized: function call to memcpy(void *__restrict__, const void *__restrict__, size_t) cannot be vectorized   [ misc_kmeans.c(21866,14) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21898,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_setitem_indexed(struct __pyx_memoryview_obj *, PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(13567,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(13567,3)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(13567,3)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *(entries+i*16) (27042:22) and *(entries+(i-1)*16) (27042:22)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(13567,3)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_is_c_contig(PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(27172,5) inlined into misc_kmeans.c(15463,13)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27176,9) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_is_f_contig(PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(27172,5) inlined into misc_kmeans.c(15534,13)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27176,9) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_copy(PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(15605,13)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_mslice.shape[__pyx_t_4] (19320:6) and __pyx_v_suboffsets[__pyx_t_4] (19339:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(15605,13)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(15605,13)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_mslice.shape[__pyx_t_4] (19320:6) and __pyx_v_strides[__pyx_t_4] (19329:6)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(15605,13)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(15605,13)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(15605,13)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_copy_new_contig(const __Pyx_memviewslice *, const char *, int, size_t, int, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(28028,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(28029,9) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(28040,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(28045,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25023,9) inlined into misc_kmeans.c(28060,9)
+   remark #15542: loop was not vectorized: inner loop was already vectorized
+
+   LOOP BEGIN at misc_kmeans.c(25023,9) inlined into misc_kmeans.c(28060,9)
+      remark #15300: LOOP WAS VECTORIZED
+   LOOP END
+
+   LOOP BEGIN at misc_kmeans.c(25023,9) inlined into misc_kmeans.c(28060,9)
+   <Remainder loop for vectorization>
+   LOOP END
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25028,9) inlined into misc_kmeans.c(28060,9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between stride (25029:13) and stride (25030:13)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25028,9) inlined into misc_kmeans.c(28060,9)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25033,5) inlined into misc_kmeans.c(28060,9)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25033,5) inlined into misc_kmeans.c(28060,9)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25033,5) inlined into misc_kmeans.c(28060,9)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25033,5) inlined into misc_kmeans.c(28060,9)
+<Remainder loop for vectorization>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_copy_fortran(PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(15696,13)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_src.shape[__pyx_t_4] (19320:6) and __pyx_v_suboffsets[__pyx_t_4] (19339:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(15696,13)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(15696,13)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_src.shape[__pyx_t_4] (19320:6) and __pyx_v_strides[__pyx_t_4] (19329:6)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(15696,13)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(15696,13)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(15696,13)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_convert_item_to_object(struct __pyx_memoryview_obj *, char *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(13776,17)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(13776,17)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_memoryview_assign_item_from_object(struct __pyx_memoryview_obj *, char *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(14024,3)
+   remark #15398: loop was not vectorized: loop was transformed to memset or memcpy
+
+   LOOP BEGIN at misc_kmeans.c(14024,3)
+   <Multiversioned v2>
+      remark #15304: loop was not vectorized: non-vectorizable loop instance from multiversioning
+   LOOP END
+
+   LOOP BEGIN at misc_kmeans.c(14024,3)
+   <Remainder, Multiversioned v2>
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_tp_dealloc_array(PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(22443,5)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed ANTI dependence between *__pyx_v_data (21698:9) and call:__pyx_memoryview_refcount_objects_in_slice(char *, Py_ssize (21728:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(21648,3) inlined into misc_kmeans.c(22443,5)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_getprop___pyx_array_memview(PyObject *, void *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(22480,10)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(22480,10)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(22480,10)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *(entries+i*16) (27042:22) and *(entries+(i-1)*16) (27042:22)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(22480,10)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_tp_dealloc_memoryview(PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(12283,5) inlined into misc_kmeans.c(22732,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(12294,7) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_mp_ass_subscript_memoryview(PyObject *, PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(22785,12)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(22785,12)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_getprop___pyx_memoryview_T(PyObject *, void *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(22795,10)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(22795,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(22795,10)
+   remark #15300: LOOP WAS VECTORIZED
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(19310,3) inlined into misc_kmeans.c(22795,10)
+<Remainder loop for vectorization>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(22795,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(22795,10)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(22795,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(22795,10)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(18275,3) inlined into misc_kmeans.c(22795,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(18377,3) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_getprop___pyx_memoryview_shape(PyObject *, void *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(14605,3) inlined into misc_kmeans.c(22803,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(14611,5) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_getprop___pyx_memoryview_strides(PyObject *, void *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(14716,3) inlined into misc_kmeans.c(22807,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(14722,5) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_getprop___pyx_memoryview_suboffsets(PyObject *, void *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(14831,3) inlined into misc_kmeans.c(22811,10)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(14837,5) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_getprop___pyx_memoryview_itemsize(PyObject *, void *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(22819,10)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(22819,10)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(22819,10)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *(entries+i*16) (27042:22) and *(entries+(i-1)*16) (27042:22)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(22819,10)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_getprop___pyx_memoryview_size(PyObject *, void *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(22827,10)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(22827,10)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(22827,10)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *(entries+i*16) (27042:22) and *(entries+(i-1)*16) (27042:22)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(22827,10)
+<Remainder>
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(15119,5) inlined into misc_kmeans.c(22827,10)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_tp_dealloc__memoryviewslice(PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(12283,5) inlined into misc_kmeans.c(22977,3)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(12294,7) ]
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_typeinfo_cmp(__Pyx_TypeInfo *, __Pyx_TypeInfo *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(27248,9)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27250,24) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27258,13)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_AddTraceback..0(const char *, int, int, const char *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(27114,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(27119,9)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(27119,9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *(entries+i*16) (27042:22) and *(entries+(i-1)*16) (27042:22)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(27119,9)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_ValidateAndInit_memviewslice(int *, int, int, int, __Pyx_TypeInfo *, __Pyx_BufFmt_StackElem *, __Pyx_memviewslice *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(27395,27)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(27395,27)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27248,9) inlined into misc_kmeans.c(27397,28)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(27249,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27258,13) inlined into misc_kmeans.c(27397,28)
+   remark #15523: loop was not vectorized: loop control variable i was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(25380,3) inlined into misc_kmeans.c(27416,9)
+   remark #15523: loop was not vectorized: loop control variable ctx.head was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_AddTraceback(const char *, int, int, const char *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(27114,15)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26976,5) inlined into misc_kmeans.c(27119,9)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(27119,9)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between *(entries+i*16) (27042:22) and *(entries+(i-1)*16) (27042:22)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(27041,5) inlined into misc_kmeans.c(27119,9)
+<Remainder>
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_PyErr_GivenExceptionMatches(PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(26611,16)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(26611,16)
+   remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_PyErr_ExceptionMatchesTuple(PyObject *, PyObject *)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(26157,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26158,60) ]
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(26161,5)
+   remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26162,93) ]
+
+   LOOP BEGIN at misc_kmeans.c(26569,9) inlined into misc_kmeans.c(26162,13)
+      remark #15520: loop was not vectorized: loop with multiple exits cannot be vectorized unless it meets search loop idiom criteria   [ misc_kmeans.c(26570,13) ]
+   LOOP END
+
+   LOOP BEGIN at misc_kmeans.c(26555,5) inlined into misc_kmeans.c(26162,13)
+      remark #15521: loop was not vectorized: loop control variable was not identified. Explicitly compute the iteration count before executing the loop or try using canonical loop form from OpenMP specification
+   LOOP END
+LOOP END
+===========================================================================
+
+Begin optimization report for: __Pyx_InitGlobals(void)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(28814,5) inlined into misc_kmeans.c(23840,7)
+   remark #15523: loop was not vectorized: loop control variable t was found, but loop iteration count cannot be computed before executing the loop
+LOOP END
+===========================================================================
+
+Begin optimization report for: __pyx_array___pyx_pf_15View_dot_MemoryView_5array___cinit__(struct __pyx_array_obj *, PyObject *, Py_ssize_t, PyObject *, PyObject *, int)
+
+    Report from: Vector optimizations [vec]
+
+
+LOOP BEGIN at misc_kmeans.c(20168,5) inlined into misc_kmeans.c(10054,23)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_strides[__pyx_t_4] (20178:8) and __pyx_v_shape[__pyx_t_4] (20187:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20168,5) inlined into misc_kmeans.c(10054,23)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20208,5) inlined into misc_kmeans.c(10054,23)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_strides[__pyx_t_2] (20218:8) and __pyx_v_shape[__pyx_t_2] (20227:7)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(20208,5) inlined into misc_kmeans.c(10054,23)
+<Remainder>
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(10164,7)
+   remark #15344: loop was not vectorized: vector dependence prevents vectorization. First dependence is shown below. Use level 5 report for details
+   remark #15346: vector dependence: assumed FLOW dependence between __pyx_v_p (10174:10) and _Py_NoneStruct (10174:10)
+LOOP END
+
+LOOP BEGIN at misc_kmeans.c(10164,7)
+<Remainder>
+LOOP END
+
+
+Non-optimizable loops:
+
+
+LOOP BEGIN at misc_kmeans.c(9932,6)
+   remark #15522: loop was not vectorized: loop control flow is too complex. Try using canonical loop form from OpenMP specification
+LOOP END
+===========================================================================
