@@ -19,3 +19,7 @@ echo "export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}" >> ~/.bashrc
 conda update -y conda
 conda config --add channels intel
 conda create -y -n intel_python intelpython3_core python=3
+
+source activate intel_python
+conda install -y scikit-learn
+source deactivate
