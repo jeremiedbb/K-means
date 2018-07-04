@@ -30,10 +30,8 @@ clusters = np.loadtxt("clusters.csv", delimiter=',', dtype=np.float32)
 n_iter = int(sys.argv[1])
 
 distrib = sys.argv[2]
-print(distrib)
 if distrib == '-sklearn':
     sklearn.set_config(working_memory=20)
-    print(distrib)
 
 kmeans(points, clusters, n_iter)
 

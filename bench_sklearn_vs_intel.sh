@@ -1,8 +1,6 @@
 #!/bin/bash
 n_iter=10
 
-source /home/jeremie/intel/parallel_studio_xe_2018.3.051/psxevars.sh intel64
-source /home/jeremie/intel/bin/compilervars.sh intel64
 source deactivate
 
 export MKL_NUM_THREADS=32
@@ -22,12 +20,10 @@ do
             python make_points.py $s $f $c >> bench_sklearn_vs_intel.csv
 
             # sklearn
-            echo `which python`
             python bench_sklearn_vs_intel.py $n_iter -sklearn >> bench_sklearn_vs_intel.csv
 
             # intel
             source activate intel_python
-            echo `which python`
             python bench_sklearn_vs_intel.py $n_iter -intel >> bench_sklearn_vs_intel.csv
             source deactivate
 
