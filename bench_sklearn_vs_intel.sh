@@ -15,21 +15,24 @@ do
     do
         for c in 10 1000 10000
         do
-            echo $i '/ 12' 
-            rm points.csv clusters.csv
-            export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}
-            python make_points.py $s $f $c >> bench_sklearn_vs_intel.csv
+            if [ $c -ne $s ]
+            then
+                echo $i '/ 16' 
+                export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}
+                python make_points.py $s $f $c >> bench_sklearn_vs_intel.csv
 
-            # sklearn
-            python bench_sklearn_vs_intel.py $n_iter -sklearn >> bench_sklearn_vs_intel.csv
+                # sklearn
+                python bench_sklearn_vs_intel.py $n_iter -sklearn >> bench_sklearn_vs_intel.csv
 
-            # intel
-            unset PYTHONPATH
-            source activate intel_python
-            python bench_sklearn_vs_intel.py $n_iter -intel >> bench_sklearn_vs_intel.csv
-            source deactivate
+                # intel
+                unset PYTHONPATH
+                source activate intel_python
+                python bench_sklearn_vs_intel.py $n_iter -intel >> bench_sklearn_vs_intel.csv
+                source deactivate
 
-            i=$(( i + 1 ))
+                rm points.csv clusters.csv
+                i=$(( i + 1 ))
+            fi
         done
     done
 done
