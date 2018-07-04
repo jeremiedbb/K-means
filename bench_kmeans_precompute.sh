@@ -7,8 +7,7 @@ source deactivate
 
 rm bench_kmeans_precompute.csv
 
-export MKL_NUM_THREADS=4
-export OMP_NUM_THREADS=4
+export MKL_NUM_THREADS=32
 export MKL_ENABLE_INSTRUCTIONS=AVX2
 
 i=1
