@@ -17,11 +17,11 @@ def kmeans(points, clusters, n_iter):
                 n_clusters=n_component,
                 random_state=0,
                 max_iter=n_iter,
-                precompute_distances=True)
+                algorithm='full')
     km.fit(points)
     t = time.time() - t
 
-    print(str(n_sample) + ',' + str(n_feature) + ',' + str(n_component) + ',' + str(t) + ',' + str(km.n_iter_))
+    print('fit,' + str(n_sample) + ',' + str(n_feature) + ',' + str(n_component) + ',' + str(t) + ',' + str(km.n_iter_))
 
 
 points = np.loadtxt("points.csv", delimiter=',', dtype=np.float32)
@@ -34,3 +34,4 @@ if distrib == '-sklearn':
     sklearn.set_config(working_memory=7)
 
 kmeans(points, clusters, n_iter)
+
