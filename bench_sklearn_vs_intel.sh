@@ -17,10 +17,10 @@ do
         do
             echo $i '/ 12' 
             rm points.csv clusters.csv
+            export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}
             python make_points.py $s $f $c >> bench_sklearn_vs_intel.csv
 
             # sklearn
-            export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}
             python bench_sklearn_vs_intel.py $n_iter -sklearn >> bench_sklearn_vs_intel.csv
 
             # intel
