@@ -7,11 +7,11 @@ conda install -y numpy
 conda install -y cython
 conda install -y scipy
 
-git clone https://github.com/scikit-learn/scikit-learn.git ~/
+git clone https://github.com/scikit-learn/scikit-learn.git ~/scikit-learn
 apt-get install --assume-yes gcc
 apt-get install --assume-yes g++
 apt-get install --assume-yes make
-make -C scikit-learn/ clean inplace
+make -C ~/scikit-learn clean inplace
 
 export PYTHONPATH=${PYTHONPATH}:~/scikit-learn
 

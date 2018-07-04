@@ -17,7 +17,8 @@ def kmeans(points, clusters, n_iter, precompute):
                 n_clusters=n_component,
                 random_state=0,
                 max_iter=n_iter,
-                precompute_distances=precompute)
+                precompute_distances=precompute,
+                algorithm='full')
     km.fit(points)
     t = time.time() - t
 
