@@ -1,5 +1,5 @@
 #!/bin/bash
-n_iter=20
+n_iter=10
 
 source /home/jeremie/intel/parallel_studio_xe_2018.3.051/psxevars.sh intel64
 source /home/jeremie/intel/bin/compilervars.sh intel64
@@ -11,7 +11,7 @@ export MKL_ENABLE_INSTRUCTIONS=AVX
 rm bench_sklearn_vs_intel.csv
 
 i=1
-for s in 10000 1000000
+for s in 10000 100000 1000000
 do
     for f in 3 50
     do
