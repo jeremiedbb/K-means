@@ -17,4 +17,4 @@ clusters = _k_init(points, n_component, x_squared_norms, random_state=np.random.
 t = time.time() - t
 np.savetxt("clusters.csv", clusters, delimiter=",")
 
-print('init,' + str(n_sample) + ',' + str(n_dim) + ',' + str(n_component) + ',' + str(t) + ',O')
+print('init,,' + str(n_sample) + ',' + str(n_dim) + ',' + str(n_component) + ',' + str(t) + ',O')

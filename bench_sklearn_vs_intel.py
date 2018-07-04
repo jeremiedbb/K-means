@@ -32,7 +32,7 @@ def kmeans(points, clusters, n_iter, distrib):
     print(km.inertia_)
     t = time.time() - t
 
-    print('fit,distrib' + str(n_sample) + ',' + str(n_feature) + ',' + str(n_component) + ',' + str(t) + ',' + str(km.n_iter_))
+    print('fit,' + distrib + ',' + str(n_sample) + ',' + str(n_feature) + ',' + str(n_component) + ',' + str(t) + ',' + str(km.n_iter_))
 
 
 points = np.loadtxt("points.csv", delimiter=',', dtype=np.float32)
