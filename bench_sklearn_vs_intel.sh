@@ -18,7 +18,7 @@ do
         for c in 10 1000 10000
         do
             echo $i '/ 12' 
-            rm points.txt clusters.txt
+            rm points.csv clusters.csv
             python make_points.py $s $f $c >> bench_sklearn_vs_intel.csv
 
             # sklearn
