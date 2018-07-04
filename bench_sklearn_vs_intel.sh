@@ -20,9 +20,11 @@ do
             python make_points.py $s $f $c >> bench_sklearn_vs_intel.csv
 
             # sklearn
+            export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}
             python bench_sklearn_vs_intel.py $n_iter -sklearn >> bench_sklearn_vs_intel.csv
 
             # intel
+            unset PYTHONPATH
             source activate intel_python
             python bench_sklearn_vs_intel.py $n_iter -intel >> bench_sklearn_vs_intel.csv
             source deactivate
