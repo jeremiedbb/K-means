@@ -33,7 +33,7 @@ distrib = sys.argv[2]
 if distrib == '-sklearn':
     sklearn.set_config(working_memory=7)
 
-precompute = sys.argv[3]
+precompute = bool(sys.argv[3])
 
 kmeans(points, clusters, n_iter, precompute)
 
