@@ -32,7 +32,7 @@ n_iter = int(sys.argv[1])
 
 distrib = sys.argv[2]
 if distrib == '-sklearn':
-    sklearn.set_config(working_memory=7)
+    sklearn.set_config(working_memory=24)
 
 precompute = bool(sys.argv[3])
 
