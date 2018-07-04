@@ -36,5 +36,3 @@ if distrib == '-sklearn':
 precompute = bool(sys.argv[3])
 
 kmeans(points, clusters, n_iter, precompute)
-
-

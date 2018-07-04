@@ -19,19 +19,18 @@ do
         for c in 10 100 1000
         do
             echo $i '/ 48' 
-            rm points.txt clusters.txt
+            rm points.csv clusters.csv
             python make_points.py $s $f $c
 
             # sklearn
             python bench_kmeans_precompute.py $n_iter -sklearn 0 >> bench_kmeans_precompute.csv
 
             # intel
-            source activate intel_python
             python bench_kmeans_precompute.py $n_iter -sklearn 1 >> bench_kmeans_precompute.csv
-            source deactivate
 
             i=$(( i + 1 ))
         done
     done
 done
 
+rm points.csv clusters.csv
