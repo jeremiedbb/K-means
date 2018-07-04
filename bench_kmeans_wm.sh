@@ -11,5 +11,3 @@ rm bench_kmeans_wm.csv
 export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}
 
 python bench_kmeans_wm.py
-
-
