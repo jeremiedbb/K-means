@@ -15,7 +15,7 @@ make -C ~/scikit-learn clean inplace
 
 export PYTHONPATH=${PYTHONPATH}:~/scikit-learn
 
-#conda update conda
+#conda update -y conda
 #conda config --add channels intel
-#conda create -n intel_python intelpython3_full python=3
+#conda create -y -n intel_python intelpython3_core python=3
 

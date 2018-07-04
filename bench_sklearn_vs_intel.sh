@@ -5,7 +5,7 @@ source /home/jeremie/intel/parallel_studio_xe_2018.3.051/psxevars.sh intel64
 source /home/jeremie/intel/bin/compilervars.sh intel64
 source deactivate
 
-export MKL_NUM_THREADS=4
+export MKL_NUM_THREADS=32
 export MKL_ENABLE_INSTRUCTIONS=AVX
 
 rm bench_sklearn_vs_intel.csv
@@ -17,7 +17,7 @@ do
     do
         for c in 10 1000 10000
         do
-            echo $i '/ 48' 
+            echo $i '/ 12' 
             rm points.txt clusters.txt
             python make_points.py $s $f $c >> bench_sklearn_vs_intel.csv
 
