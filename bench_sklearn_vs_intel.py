@@ -11,7 +11,7 @@ def kmeans(points, clusters, n_iter, distrib):
     n_component = clusters.shape[0]
     
     t = time.time()
-    if distrib == '-sklearn':
+    if distrib == 'sklearn':
         km = KMeans(init=clusters,
                     n_init=1,
                     tol=1.0e-16,
@@ -32,7 +32,7 @@ def kmeans(points, clusters, n_iter, distrib):
     print(km.inertia_)
     t = time.time() - t
 
-    print('fit,' + str(n_sample) + ',' + str(n_feature) + ',' + str(n_component) + ',' + str(t) + ',' + str(km.n_iter_))
+    print('fit,distrib' + str(n_sample) + ',' + str(n_feature) + ',' + str(n_component) + ',' + str(t) + ',' + str(km.n_iter_))
 
 
 points = np.loadtxt("points.csv", delimiter=',', dtype=np.float32)
@@ -41,7 +41,7 @@ clusters = np.loadtxt("clusters.csv", delimiter=',', dtype=np.float32)
 n_iter = int(sys.argv[1])
 
 distrib = sys.argv[2]
-if distrib == '-sklearn':
+if distrib == 'sklearn':
     sklearn.set_config(working_memory=20)
 
 kmeans(points, clusters, n_iter, distrib)
