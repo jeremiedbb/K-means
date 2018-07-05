@@ -19,7 +19,7 @@ do
             then
                 echo $i '/ 16' 
                 export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}
-                python make_points.py $s $f $c no-init >> bench_sklearn_vs_intel.csv
+                python make_points.py $s $f $c init >> bench_sklearn_vs_intel.csv
 
                 # sklearn
                 python bench_sklearn_vs_intel.py $n_iter sklearn >> bench_sklearn_vs_intel.csv
