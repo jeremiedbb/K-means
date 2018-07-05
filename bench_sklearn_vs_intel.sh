@@ -9,15 +9,15 @@ export MKL_ENABLE_INSTRUCTIONS=AVX
 rm bench_sklearn_vs_intel.csv
 
 i=1
-for s in 10000 100000 1000000
+for s in 10000 100000 500000
 do
     for f in 3 50
     do
-        for c in 10 1000 10000
+        for c in 10 1000 5000
         do
             if [ $c -ne $s ]
             then
-                echo $i '/ 16' 
+                echo $i '/ 18' 
                 export PYTHONPATH=${HOME}/scikit-learn:${PYTHONPATH}
                 python make_points.py $s $f $c init >> bench_sklearn_vs_intel.csv
 
