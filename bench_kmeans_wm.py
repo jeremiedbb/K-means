@@ -11,8 +11,10 @@ n_feature= 50
 n_component = 1000
 
 working_memory = [1, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100, 250, 500, 1000, 2500, 5000, 10000]
+
 points = np.random.random_sample((n_sample, n_feature)).astype('float32')
 clusters = points[np.random.choice(n_sample, n_component, replace=False)]
+
 with open('bench_kmeans_wm.csv','w') as file:
     file.write("wm,time\n")
 
@@ -25,7 +27,7 @@ with open('bench_kmeans_wm.csv','w') as file:
         km = KMeans(init=clusters,
                     n_init=1,
                     tol=1.0e-16,
-                    n_clusters=1000,
+                    n_clusters=n_component,
                     random_state=0,
                     max_iter=n_iter,
                     algorithm='full',
