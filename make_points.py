@@ -13,7 +13,7 @@ np.savetxt("points.csv", points, delimiter=",")
 
 init = sys.argv[4]
 if init != 'no-init':
-    x_squared_norms = row_norms(points, squared=True)
+    #x_squared_norms = row_norms(points, squared=True)
     t = time.time()
     #clusters = _k_init(points, n_component, x_squared_norms, random_state=np.random.RandomState(0))
     clusters = points[np.random.choice(n_sample, n_component, replace=False)]

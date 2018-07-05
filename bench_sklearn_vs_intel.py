@@ -12,7 +12,7 @@ def kmeans(points, clusters, n_iter, distrib):
     
     t = time.time()
     if distrib == 'sklearn':
-        km = KMeans(init='random',
+        km = KMeans(init=clusters,
                     n_init=1,
                     tol=1.0e-16,
                     n_clusters=n_component,
@@ -21,7 +21,7 @@ def kmeans(points, clusters, n_iter, distrib):
                     algorithm='full',
                     precompute_distances=True)
     else:
-        km = KMeans(init='random',
+        km = KMeans(init=clusters,
                     n_init=1,
                     tol=1.0e-16,
                     n_clusters=n_component,
