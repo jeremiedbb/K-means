@@ -16,14 +16,14 @@ def kmeans(points, clusters, n_iter, distrib):
                     n_init=1,
                     n_clusters=n_component,
                     random_state=0,
-                    algorithm='full',
+                    algorithm='elkan',
                     precompute_distances=True)
     else:
         km = KMeans(init=clusters,
                     n_init=1,
                     n_clusters=n_component,
                     random_state=0,
-                    algorithm='full')
+                    algorithm='elkan')
     km.fit(points)
     print(km.inertia_)
     t = time.time() - t
