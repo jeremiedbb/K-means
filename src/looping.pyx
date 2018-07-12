@@ -7,75 +7,47 @@ cimport cython
 cimport numpy as np
 import time
 
-def ploop(N):
-    a = np.zeros(N).astype(np.float32)
-    t = time.time()
-    for i in range (1000):
-        loop(a)
-    t = time.time() - t
-    return(t/1000)
-
-def ploop_c(N, n):
-    a = np.zeros(N).astype(np.float32)
-    cdef np.float32_t[::1] av = a
-    t = time.time()
-    for i in range (1000):
-        chunked_loop(av, n)
-    t = time.time() - t
-    return(t/1000)
-
-def ploop_m_nc(N):
-    a = np.zeros(N).astype(np.float32)
-    cdef np.float32_t[::1] av = a
-    t = time.time()
-    for i in range (1000):
-        loop_m_nc(av)
-    t = time.time() - t
-    return(t/1000)
-
-cpdef void loop(np.ndarray[np.float32_t] a):
-    cdef:
-        np.float32_t c = 1.0
-        Py_ssize_t idx, N = a.shape[0]
-    
-    with nogil:
-        for idx in prange(N):
-            a[idx] = 0.0
-        for idx in prange(N):
-            a[idx] = a[idx] + c
-
 cpdef double chunked_loop(np.float32_t[::1] a, int chunk_size) nogil:
     cdef:
         np.float32_t c = 1.0
-        Py_ssize_t expidx, chidx, s, idx, N = a.shape[0]
-        Py_ssize_t ch_s = chunk_size
-        Py_ssize_t Nch = N / ch_s
-        Py_ssize_t rch = N % ch_s
+        Py_ssize_t exp_idx, chunk_idx, start_idx, idx, N = a.shape[0]
+        Py_ssize_t chunksize = chunk_size
+        Py_ssize_t N_chunks = N / chunksize
+        Py_ssize_t remainder = N % chunksize
 
     with gil:
         t = time.time()
-    for expidx in range(10000):
-        s = 0
-        for chidx in range(Nch):
-            for idx in range(ch_s):
-                a[s + idx] = 0.0
-            for idx in range(ch_s):
-                a[s + idx] = a[s + idx] + c
-            s += chunk_size
-        for idx in range(rch):
-            a[s + idx] = 0.0
-        for idx in range(rch):
-            a[s + idx] = a[s + idx] + c
+    for exp_idx in range(10000):
+        start_idx = 0
+        for chunk_idx in range(N_chunks):
+            for idx in range(chunksize):
+                a[start_idx + idx] = c
+            start_idx += chunksize
+        for idx in range(remainder):
+            a[start_idx + idx] = c
     with gil:
         t = time.time() - t
+        t /= 10000
         return t
 
-cpdef void loop_m_nc(np.float32_t[::1] a) nogil:
+cpdef double chunked_loop_b(np.ndarray[np.float32_t] a, int chunk_size):
     cdef:
         np.float32_t c = 1.0
-        Py_ssize_t idx, N = a.shape[0]
+        Py_ssize_t exp_idx, chunk_idx, start_idx, idx, N = a.shape[0]
+        Py_ssize_t chunksize = chunk_size
+        Py_ssize_t N_chunks = N / chunksize
+        Py_ssize_t remainder = N % chunksize
 
-    for idx in range(N):
-        a[idx] = 0.0
-    for idx in range(N):
-        a[idx] = a[idx] + c
+    t = time.time()
+    with nogil:
+        for exp_idx in range(10000):
+            start_idx = 0
+            for chunk_idx in range(N_chunks):
+                for idx in range(chunksize):
+                    a[start_idx + idx] = c
+                start_idx += chunksize
+            for idx in range(remainder):
+                a[start_idx + idx] = c
+    t = time.time() - t
+    t /= 10000
+    return t
