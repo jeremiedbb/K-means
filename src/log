@@ -1,6 +1,0 @@
-Compiling looping.pyx because it changed.
-[1/1] Cythonizing looping.pyx
-running build_ext
-building 'looping' extension
-gcc -pthread -B /home/jeremie/miniconda/envs/dev/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -I/home/jeremie/miniconda/envs/dev/lib/python3.6/site-packages/numpy/core/include -I/home/jeremie/miniconda/envs/dev/include/python3.6m -c looping.c -o build/temp.linux-x86_64-3.6/looping.o -ffast-math -fopenmp -fprefetch-loop-arrays -falign-loops=32 -fopt-info-vec -fopt-info-vec-missed -mavx2
-gcc -pthread -shared -B /home/jeremie/miniconda/envs/dev/compiler_compat -L/home/jeremie/miniconda/envs/dev/lib -Wl,-rpath=/home/jeremie/miniconda/envs/dev/lib -Wl,--no-as-needed -Wl,--sysroot=/ build/temp.linux-x86_64-3.6/looping.o -o /home/jeremie/R/K-means/src/looping.cpython-36m-x86_64-linux-gnu.so -fopenmp
