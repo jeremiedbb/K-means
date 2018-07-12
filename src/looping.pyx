@@ -2,7 +2,6 @@
 
 import numpy as np
 from cython.parallel import prange
-from libc.stdlib cimport malloc, free
 cimport cython
 cimport numpy as np
 import time
