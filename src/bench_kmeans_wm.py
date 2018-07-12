@@ -15,7 +15,7 @@ working_memory = [1, 5, 10, 15, 20, 25, 30, 40, 50, 60, 70, 80, 90, 100, 250, 50
 points = np.random.random_sample((n_sample, n_feature)).astype('float32')
 clusters = points[np.random.choice(n_sample, n_component, replace=False)]
 
-with open('bench_kmeans_wm.csv','w') as file:
+with open('../bench/bench_kmeans_wm.csv','w') as file:
     file.write("wm,time\n")
 
     for i, wm in enumerate(working_memory):
