@@ -4,7 +4,7 @@ from looping import chunked_loop, chunked_loop_b
 size_M = 20
 N = size_M * 250000
 
-chunk_sizes = np.logspace(2, 23, base=2, num=500, dtype=int)
+chunk_sizes = np.logspace(2, 23, base=2, num=250, dtype=int)
 
 with open('bench_chunked_loop.csv', 'w') as f:
     f.write('chunk_size,time1,time2\n')
