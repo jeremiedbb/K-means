@@ -4,26 +4,31 @@ import sys
 import sklearn
 from sklearn.cluster import KMeans
 
+
 # KMeans
 def kmeans(points, clusters, n_iter, distrib):
     n_sample = points.shape[0]
     n_feature = points.shape[1]
     n_component = clusters.shape[0]
-    
+
     t = time.time()
     if distrib == 'sklearn':
         km = KMeans(init=clusters,
                     n_init=1,
                     n_clusters=n_component,
                     random_state=0,
-                    algorithm='elkan',
-                    precompute_distances=True)
+                    algorithm='full',
+                    precompute_distances=True,
+                    max_iter=n_iter,
+                    tol=0)
     else:
         km = KMeans(init=clusters,
                     n_init=1,
                     n_clusters=n_component,
                     random_state=0,
-                    algorithm='elkan')
+                    algorithm='full',
+                    max_iter=n_iter,
+                    tol=0)
     km.fit(points)
     print(km.inertia_)
     t = time.time() - t
@@ -41,4 +46,3 @@ if distrib == 'sklearn':
     sklearn.set_config(working_memory=1000)
 
 kmeans(points, clusters, n_iter, distrib)
-

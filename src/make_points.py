@@ -8,7 +8,7 @@ n_sample = int(sys.argv[1])
 n_dim = int(sys.argv[2])
 n_component = int(sys.argv[3])
 
-points = np.random.random_sample((n_sample, n_dim)).astype('float32')
+points = np.random.random_sample((n_sample, n_dim)).astype(np.float32)
 np.savetxt("points.csv", points, delimiter=",")
 
 init = sys.argv[4]
