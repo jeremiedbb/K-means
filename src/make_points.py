@@ -2,13 +2,15 @@ import numpy as np
 import sys
 from sklearn.cluster.k_means_ import _k_init
 from sklearn.utils.extmath import row_norms
+from sklearn.datasets import make_blobs
 import time
 
 n_sample = int(sys.argv[1])
 n_dim = int(sys.argv[2])
 n_component = int(sys.argv[3])
 
-points = np.random.random_sample((n_sample, n_dim)).astype(np.float32)
+#points = np.random.random_sample((n_sample, n_dim)).astype(np.float32)
+points, _ = make_blobs(n_sample, n_feature)
 np.savetxt("points.csv", points, delimiter=",")
 
 init = sys.argv[4]
