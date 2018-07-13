@@ -9,11 +9,10 @@ n_sample = 100000
 n_feature = 50
 n_component = 1000
 
-working_memory = [0.5, 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20,
-                  22, 24, 26, 28, 30, 32, 34, 36, 38, 40,
-                  45, 50, 55, 60, 65, 70, 75, 80, 85, 90, 95, 100,
-                  200, 400, 600, 800, 1000,
-                  2000, 4000, 6000, 8000, 10000]
+working_memory = [0.1, 0.25, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9,
+                  10, 12, 14, 16, 18, 20,
+                  25, 30, 35, 40, 45, 50, 60, 70, 80, 90, 100,
+                  200, 400, 600, 800, 1000]
 
 points = np.random.random_sample((n_sample, n_feature)).astype(np.float32)
 clusters = points[np.random.choice(n_sample, n_component, replace=False)]
