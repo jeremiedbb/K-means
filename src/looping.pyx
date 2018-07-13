@@ -16,7 +16,7 @@ cpdef double chunked_loop(np.float32_t[::1] a, int chunk_size) nogil:
 
     with gil:
         t = time.time()
-    for exp_idx in range(10000):
+    for exp_idx in range(1000):
         start_idx = 0
         for chunk_idx in range(N_chunks):
             for idx in range(chunksize):
@@ -26,7 +26,7 @@ cpdef double chunked_loop(np.float32_t[::1] a, int chunk_size) nogil:
             a[start_idx + idx] = c
     with gil:
         t = time.time() - t
-        t /= 10000
+        t /= 1000
         return t
 
 cpdef double chunked_loop_b(np.ndarray[np.float32_t] a, int chunk_size):
@@ -39,7 +39,7 @@ cpdef double chunked_loop_b(np.ndarray[np.float32_t] a, int chunk_size):
 
     t = time.time()
     with nogil:
-        for exp_idx in range(10000):
+        for exp_idx in range(1000):
             start_idx = 0
             for chunk_idx in range(N_chunks):
                 for idx in range(chunksize):
@@ -48,5 +48,5 @@ cpdef double chunked_loop_b(np.ndarray[np.float32_t] a, int chunk_size):
             for idx in range(remainder):
                 a[start_idx + idx] = c
     t = time.time() - t
-    t /= 10000
+    t /= 1000
     return t

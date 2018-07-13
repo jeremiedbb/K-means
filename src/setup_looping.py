@@ -6,10 +6,7 @@ import numpy
 
 compile_args = ['-ffast-math',
                 '-fopenmp',
-                '-fprefetch-loop-arrays',
-                '-falign-loops=32',
-                '-fopt-info-vec',
-                '-fopt-info-vec-missed']
+                '-fopt-info-vec']
 link_args = ["-fopenmp"]
 
 extensions = [Extension("looping",
