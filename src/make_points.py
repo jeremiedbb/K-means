@@ -10,7 +10,7 @@ n_dim = int(sys.argv[2])
 n_component = int(sys.argv[3])
 
 #points = np.random.random_sample((n_sample, n_dim)).astype(np.float32)
-points, _ = make_blobs(n_sample, n_feature)
+points, _ = make_blobs(n_sample, n_dim)
 np.savetxt("points.csv", points, delimiter=",")
 
 init = sys.argv[4]
