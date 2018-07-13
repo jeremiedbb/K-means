@@ -8,7 +8,6 @@ git clone https://github.com/scikit-learn/scikit-learn.git ~/scikit-learn
 apt-get install --assume-yes gcc
 apt-get install --assume-yes g++
 apt-get install --assume-yes make
-make -C ~/scikit-learn clean inplace
 
 conda update -y conda
 conda create -y -n sklearn python=3.6 pip numpy scipy cython

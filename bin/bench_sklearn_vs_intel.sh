@@ -7,6 +7,8 @@ rm bench_sklearn_vs_intel.csv
 rm points.csv
 rm clusters.csv
 
+echo 'step,distrib,pre-init,algo,tol,n_sample,n_feature,n_component,time,iter' >> bench_sklearn_vs_intel.csv
+
 i=1
 for s in 10000 100000 1000000
 do
@@ -21,12 +23,27 @@ do
                 python make_points.py $s $f $c init >> bench_sklearn_vs_intel.csv
 
                 # sklearn
-                python bench_sklearn_vs_intel.py $n_iter sklearn >> bench_sklearn_vs_intel.csv
+                # pre init 'full' max_iter 
+                python bench_sklearn_vs_intel.py $n_iter sklearn full 0 init >> bench_sklearn_vs_intel.csv
+                # no pre init 'full' max_iter 
+                python bench_sklearn_vs_intel.py $n_iter sklearn full 0 no-init >> bench_sklearn_vs_intel.csv
+                # pre init 'elkan' max_iter 
+                python bench_sklearn_vs_intel.py $n_iter sklearn elkan 0 init >> bench_sklearn_vs_intel.csv
+                # no pre init 'elkan' max_iter 
+                python bench_sklearn_vs_intel.py $n_iter sklearn elkan 0 no-init >> bench_sklearn_vs_intel.csv
+                
                 source deactivate
 
                 # intel
                 source activate intel
-                python bench_sklearn_vs_intel.py $n_iter intel >> bench_sklearn_vs_intel.csv
+                # pre init 'full' max_iter 
+                python bench_sklearn_vs_intel.py $n_iter intel full 0 init >> bench_sklearn_vs_intel.csv
+                # no pre init 'full' max_iter 
+                python bench_sklearn_vs_intel.py $n_iter intel full 0 no-init >> bench_sklearn_vs_intel.csv
+                # pre init 'elkan' max_iter 
+                python bench_sklearn_vs_intel.py $n_iter intel elkan 0 init >> bench_sklearn_vs_intel.csv
+                # no pre init 'elkan' max_iter 
+                python bench_sklearn_vs_intel.py $n_iter intel elkan 0 no-init >> bench_sklearn_vs_intel.csv
                 source deactivate
 
                 rm points.csv clusters.csv
