@@ -10,9 +10,9 @@ rm clusters.csv
 echo 'step,distrib,pre-init,algo,tol,n_sample,n_feature,n_component,time,iter' >> bench_sklearn_vs_intel.csv
 
 i=1
-for s in 10000 100000 1000000
+for s in 10000 100000
 do
-    for f in 3 50
+    for f in 100 1000 10000
     do
         for c in 10 100 1000 10000
         do
