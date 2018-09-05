@@ -1,5 +1,5 @@
 import numpy as np
-from kmeans_chunked import kmeans_lloyd_chunked, _inertia
+from kmeans_chunked import kmeans_lloyd_chunked
 import time
 
 
@@ -12,44 +12,42 @@ def kmeans(X, centers, n_samples_chunk, max_iter):
 
     for i in range(max_iter):
 
-        kmeans_lloyd_chunked(X,
-                             x_squared_norms,
-                             centers_old,
-                             centers_new,
-                             labels,
-                             n_samples_chunk)
+        inertia = kmeans_lloyd_chunked(X,
+                                       x_squared_norms,
+                                       centers_old,
+                                       centers_new,
+                                       labels,
+                                       n_samples_chunk)
 
         center_shift = ((centers_new - centers_old)**2).sum()
         if center_shift <= 0.0:
             break
 
     if center_shift > 0:
-        kmeans_lloyd_chunked(X,
-                             x_squared_norms,
-                             centers_old,
-                             centers_new,
-                             labels,
-                             n_samples_chunk)
+        inertia = kmeans_lloyd_chunked(X,
+                                       x_squared_norms,
+                                       centers_old,
+                                       centers_new,
+                                       labels,
+                                       n_samples_chunk)
 
-    inertia = _inertia(X, centers_old, labels)
-
-    return labels, centers_old, inertia, i + 1
+    return labels, inertia, centers_old, i + 1
 
 
 n_samples_pow = 17
-n_features = 2**7
+n_features = 2**6
 n_clusters = 2**10
 X = np.random.random_sample((2**n_samples_pow, n_features)).astype(np.float32)
 centers = X[np.random.choice(np.arange(X.shape[0]), n_clusters)]
 
-n_tests = 20
+n_tests = 10
 
 for n_samples_chunk in [2**(j) for j in np.arange(4, n_samples_pow + 1)]:
     ts = []
     for test in range(n_tests):
         t = time.time()
-        labels, centers_old, inertia, n_iter = \
-            kmeans(X, centers, n_samples_chunk + 1, 300)
+        labels, inertia, centers_old, n_iter = \
+            kmeans(X, centers, n_samples_chunk, 20)
         t = time.time() - t
         t /= n_iter
         ts.append(t)
