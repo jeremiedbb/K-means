@@ -2,16 +2,12 @@
 cimport numpy as np
 import numpy as np
 cimport cython
+cimport openmp
 from cython cimport floating
-from cython.parallel import prange, parallel
+from cython.parallel cimport prange, parallel
 from scipy.linalg.cython_blas cimport sgemm, dgemm
 from libc.stdlib cimport malloc, free
 from libc.string cimport memset, memcpy
-
-
-cdef:
-    float FLT_MIN = np.finfo(np.float32).min
-    double DBL_MIN = np.finfo(np.float64).min
 
 
 cdef void _gemm(char *ta, char *tb, int *m, int *n, int *k,
@@ -32,9 +28,10 @@ cdef void _labels_inertia_centers_chunk(floating *X_chunk,
                                         int *labels_chunk,
                                         int n_samples_chunk,
                                         int n_clusters,
-                                        int n_features) nogil:
+                                        int n_features,
+                                        floating *inertia) nogil:
     """K-means combined EM step for one data chunk
-
+    
     Compute the partial contribution of a single data chunk to the labels,
     centers and inertia.
     """
@@ -72,21 +69,25 @@ cdef void _labels_inertia_centers_chunk(floating *X_chunk,
                 min_sq_dist_eff = sq_dist_eff
                 best_cluster = j
 
+        pdist_eff[i] = best_cluster
+        pdist_eff[n_samples_chunk + i] = min_sq_dist_eff
+
+        inertia[0] += x_squared_norms_chunk[i] + min_sq_dist_eff
         labels_chunk[i] = best_cluster
         clusters_pop[best_cluster] += 1  
-        for k in xrange(n_features):
+        for k in xrange(n_features):      
             centers_new[best_cluster * n_features + k] += \
                 X_chunk[i * n_features + k]
 
     free(pdist_eff)
 
 
-cpdef void kmeans_lloyd_chunked(floating[:, ::1] X,
-                                floating[::1] x_squared_norms,
-                                floating[:, ::1] centers_old,
-                                floating[:, ::1] centers_new,
-                                int[::1] labels,
-                                int n_samples_chunk) nogil:
+cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
+                                    floating[::1] x_squared_norms,
+                                    floating[:, ::1] centers_old,
+                                    floating[:, ::1] centers_new,
+                                    int[::1] labels,
+                                    int n_samples_chunk) nogil:
     """Single interation of K-means lloyd algorithm
 
     Update labels and centers (inplace), and compute inertia, for one
@@ -132,7 +133,9 @@ cpdef void kmeans_lloyd_chunked(floating[:, ::1] X,
         floating *centers_squared_norms = \
             <floating*> malloc(n_clusters * sizeof(floating))
         int *clusters_pop = <int*> malloc(n_clusters * sizeof(int))
-        
+        floating inertia
+
+        floating *inertia_chunk
         floating *centers_new_chunk
         int *clusters_pop_chunk
 
@@ -149,11 +152,13 @@ cpdef void kmeans_lloyd_chunked(floating[:, ::1] X,
     memset(&centers_new[0, 0], 0, n_clusters * n_features * sizeof(floating))
     memset(clusters_pop, 0, n_clusters * sizeof(int))
 
-    with parallel():
+    with nogil, parallel():
+        inertia_chunk = <floating*> malloc(sizeof(floating))
         centers_new_chunk = \
             <floating*> malloc(n_clusters * n_features * sizeof(floating))
         clusters_pop_chunk = <int*> malloc(n_clusters * sizeof(int))
 
+        inertia_chunk[0] = 0.0
         memset(clusters_pop_chunk, 0, n_clusters * sizeof(int))
         memset(centers_new_chunk, 0,
                n_clusters * n_features * sizeof(floating))
@@ -169,7 +174,8 @@ cpdef void kmeans_lloyd_chunked(floating[:, ::1] X,
                 &labels[chunk_idx * n_samples_chunk],
                 n_samples_chunk,
                 n_clusters,
-                n_features)
+                n_features,
+                inertia_chunk)
 
         if n_samples_r > 0:
             _labels_inertia_centers_chunk(
@@ -182,15 +188,19 @@ cpdef void kmeans_lloyd_chunked(floating[:, ::1] X,
                 &labels[n_chunks * n_samples_chunk],
                 n_samples_r,
                 n_clusters,
-                n_features)
+                n_features,
+                inertia_chunk)
 
         # reduce
         with gil:
+            (&inertia)[0] += inertia_chunk[0]
+
             for j in xrange(n_clusters):
                 clusters_pop[j] += clusters_pop_chunk[j]
                 for k in xrange(n_features):
                     centers_new[j, k] += centers_new_chunk[j * n_features + k]
 
+        free(inertia_chunk)
         free(clusters_pop_chunk)
         free(centers_new_chunk)
 
@@ -203,22 +213,5 @@ cpdef void kmeans_lloyd_chunked(floating[:, ::1] X,
 
     free(centers_squared_norms)
     free(clusters_pop)
-
-
-cpdef floating _inertia(floating[:, ::1] X,
-                        floating[:, ::1] centers,
-                        int[::1] labels):
-    cdef:
-        int n_samples = X.shape[0]
-        int n_features = X.shape[1]
-        floating inertia = 0.0
-        floating x
-        int i, k, cluster
-    
-    for i in xrange(n_samples):
-        cluster = labels[i]
-        for k in xrange(n_features):
-            x = X[i, k] - centers[cluster, k]
-            inertia += x * x
 
     return inertia

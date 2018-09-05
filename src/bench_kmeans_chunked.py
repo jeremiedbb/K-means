@@ -36,8 +36,8 @@ def kmeans(X, centers, n_samples_chunk, max_iter):
     return labels, centers_old, inertia, i + 1
 
 
-n_samples_pow = 12
-n_features = 2**1
+n_samples_pow = 17
+n_features = 2**7
 n_clusters = 2**10
 X = np.random.random_sample((2**n_samples_pow, n_features)).astype(np.float32)
 centers = X[np.random.choice(np.arange(X.shape[0]), n_clusters)]

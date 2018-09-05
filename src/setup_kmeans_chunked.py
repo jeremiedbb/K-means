@@ -4,8 +4,8 @@ from Cython.Build import cythonize
 import numpy
 
 #
-compile_args = []
-link_args = []
+compile_args = ['-fopenmp']
+link_args = ['-fopenmp']
 
 extensions = [Extension("kmeans_chunked",
                         sources=["kmeans_chunked.pyx"],
