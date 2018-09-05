@@ -47,7 +47,7 @@ for ns in n_samples:
                 X = np.random.random_sample((ns, nf)).astype(np.float32)
                 centers = X[np.random.choice(np.arange(X.shape[0]), nc)]
 
-                n_samples_chunk = 56 * 2**18 / (2 * nc)
+                n_samples_chunk = 4 * 2**18 / (2 * nc)
 
                 ts = []
                 for test in range(n_tests):
