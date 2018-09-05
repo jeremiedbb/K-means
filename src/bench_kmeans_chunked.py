@@ -40,7 +40,7 @@ n_clusters = 2**10
 X = np.random.random_sample((2**n_samples_pow, n_features)).astype(np.float32)
 centers = X[np.random.choice(np.arange(X.shape[0]), n_clusters)]
 
-n_tests = 10
+n_tests = 20
 
 for n_samples_chunk in [2**(j) for j in np.arange(4, n_samples_pow + 1)]:
     ts = []

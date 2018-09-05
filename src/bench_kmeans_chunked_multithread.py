@@ -34,9 +34,9 @@ def kmeans(X, centers, n_samples_chunk, max_iter):
     return labels, inertia, centers_old, i + 1
 
 
-n_samples = [2**i for i in np.arange(10, 20)]
-n_clusters = [2**j for j in np.arange(3, 10)]
-n_features = [2**k for k in np.arange(1, 7)]
+n_samples = [2**i for i in np.arange(10, 21)]
+n_clusters = [2**j for j in np.arange(3, 11)]
+n_features = [2**k for k in np.arange(1, 8)]
 
 n_tests = 20
 
