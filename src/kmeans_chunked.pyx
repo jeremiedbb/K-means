@@ -69,9 +69,6 @@ cdef void _labels_inertia_centers_chunk(floating *X_chunk,
                 min_sq_dist_eff = sq_dist_eff
                 best_cluster = j
 
-        pdist_eff[i] = best_cluster
-        pdist_eff[n_samples_chunk + i] = min_sq_dist_eff
-
         inertia[0] += x_squared_norms_chunk[i] + min_sq_dist_eff
         labels_chunk[i] = best_cluster
         clusters_pop[best_cluster] += 1  
