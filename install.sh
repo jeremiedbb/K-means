@@ -14,7 +14,7 @@ conda create -y -n dev python=3.6 numpy scipy cython
 conda create -y -n sklearn python=3.6 pip numpy scipy cython
 conda create -y -n intel -c intel intelpython3_core python=3
 
-source activate sklearn
+source activate dev
 pip install -e ~/scikit-learn
 source deactivate
 
