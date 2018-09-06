@@ -138,6 +138,7 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
         floating *inertia_chunk
         floating *centers_new_chunk
         int *clusters_pop_chunk
+        #floating *centers_squared_norms_local
 
     # reset all arrays at each iteration
     memcpy(&centers_old[0, 0], &centers_new[0, 0],
@@ -157,11 +158,15 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
         centers_new_chunk = \
             <floating*> malloc(n_clusters * n_features * sizeof(floating))
         clusters_pop_chunk = <int*> malloc(n_clusters * sizeof(int))
+        #centers_squared_norms_local = \
+        #    <floating*> malloc(n_clusters * sizeof(floating))
 
         inertia_chunk[0] = 0.0
         memset(clusters_pop_chunk, 0, n_clusters * sizeof(int))
         memset(centers_new_chunk, 0,
                n_clusters * n_features * sizeof(floating))
+        #memcpy(&centers_squared_norms_local[0], &centers_squared_norms[0],
+        #       n_clusters * sizeof(floating))
 
         for chunk_idx in prange(n_chunks):
             _labels_inertia_centers_chunk(

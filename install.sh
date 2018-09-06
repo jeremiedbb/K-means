@@ -10,6 +10,7 @@ apt-get install --assume-yes g++
 apt-get install --assume-yes make
 
 conda update -y conda
+conda create -y -n dev python=3.6 numpy scipy cython
 conda create -y -n sklearn python=3.6 pip numpy scipy cython
 conda create -y -n intel -c intel intelpython3_core python=3
 

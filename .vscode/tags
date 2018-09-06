@@ -1,0 +1,184 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+N	../src/bench_looping.py	/^N = size_M * 250000$/;"	kind:variable	line:5
+X	../src/bench_looping.py	/^            X = np.zeros(N).astype(np.float32)$/;"	kind:variable	line:13
+_kmpp	../src/my_kmpp.pyx	/^cpdef void _kmpp(np.ndarray[np.float32_t, ndim=2] X,$/;"	kind:function	line:18
+algo	../src/bench_sklearn_vs_intel.py	/^algo = sys.argv[3]$/;"	kind:variable	line:70
+algorithm	../src/bench_kmeans_wm.py	/^                        algorithm='full',$/;"	kind:variable	line:41
+bench_kmeans_precompute.py	../src/bench_kmeans_precompute.py	1;"	kind:file	line:1
+bench_kmeans_wm.py	../src/bench_kmeans_wm.py	1;"	kind:file	line:1
+bench_looping.py	../src/bench_looping.py	1;"	kind:file	line:1
+bench_p_dist_argmin.py	../src/bench_p_dist_argmin.py	1;"	kind:file	line:1
+bench_sklearn_vs_intel.py	../src/bench_sklearn_vs_intel.py	1;"	kind:file	line:1
+bench_sklearn_vs_intel_w_init.py	../src/bench_sklearn_vs_intel_w_init.py	1;"	kind:file	line:1
+chunk_sizes	../src/bench_looping.py	/^chunk_sizes = np.logspace(6, 23, base=2, num=100, dtype=int)$/;"	kind:variable	line:7
+chunked_loop	../src/looping.pyx	/^cpdef double chunked_loop(np.float32_t[::1] a, int chunk_size) nogil:$/;"	kind:function	line:9
+chunked_loop_b	../src/looping.pyx	/^cpdef double chunked_loop_b(np.ndarray[np.float32_t] a, int chunk_size):$/;"	kind:function	line:32
+clusters	../src/bench_kmeans_precompute.py	/^clusters = np.loadtxt("clusters.csv", delimiter=',', dtype=np.float32)$/;"	kind:variable	line:29
+clusters	../src/bench_kmeans_wm.py	/^clusters = points[np.random.choice(n_sample, n_component, replace=False)]$/;"	kind:variable	line:23
+clusters	../src/bench_sklearn_vs_intel.py	/^clusters = np.loadtxt("clusters.csv", delimiter=',', dtype=np.float32)$/;"	kind:variable	line:62
+clusters	../src/make_points.py	/^    clusters = _k_init(points, n_component, x_squared_norms, random_state=np.random.RandomState(0))$/;"	kind:variable	line:20
+compile_args	../src/setup.py	/^    compile_args = ['-ffast-math', '-fopenmp']$/;"	kind:variable	line:8
+compile_args	../src/setup.py	/^    compile_args = []$/;"	kind:variable	line:22
+compile_args	../src/setup_kmpp.py	/^    compile_args = ['-ffast-math', '-fopenmp', '-fprefetch-loop-arrays']$/;"	kind:variable	line:8
+compile_args	../src/setup_kmpp.py	/^    compile_args = []$/;"	kind:variable	line:29
+compile_args	../src/setup_looping.py	/^compile_args = ['-ffast-math',$/;"	kind:variable	line:7
+compile_args	../src/setup_sqd.py	/^    compile_args = ['-ffast-math', '-fopenmp', '-fprefetch-loop-arrays']$/;"	kind:variable	line:8
+compile_args	../src/setup_sqd.py	/^    compile_args = []$/;"	kind:variable	line:29
+cython_des_kmeans	../src/misc_kmeans.pyx	/^cpdef void cython_des_kmeans(np.ndarray[np.float32_t, ndim=2, mode="c"] points,$/;"	kind:function	line:273
+cython_flat_kmeans	../src/misc_kmeans.pyx	/^cpdef void cython_flat_kmeans(np.ndarray[np.float32_t, ndim=1, mode="c"] points,$/;"	kind:function	line:210
+cython_kmeans	../src/misc_kmeans.pyx	/^cpdef void cython_kmeans(np.ndarray[np.float32_t, ndim=2, mode="c"] points,$/;"	kind:function	line:142
+cython_mm_kmeans	../src/misc_kmeans.pyx	/^cpdef void cython_mm_kmeans(np.ndarray[np.float32_t, ndim=2] points,$/;"	kind:function	line:341
+distrib	../src/bench_kmeans_precompute.py	/^distrib = sys.argv[2]$/;"	kind:variable	line:33
+distrib	../src/bench_sklearn_vs_intel.py	/^distrib = sys.argv[2]$/;"	kind:variable	line:66
+distrib	../src/bench_sklearn_vs_intel_w_init.py	/^distrib = sys.argv[2]$/;"	kind:variable	line:41
+ext_modules	../src/setup.py	/^    ext_modules = cythonize(extensions, annotate=True)$/;"	kind:variable	line:32
+ext_modules	../src/setup_gemm.py	/^    ext_modules = cythonize(extensions, annotate=True)$/;"	kind:variable	line:14
+ext_modules	../src/setup_kmpp.py	/^    ext_modules = cythonize(extensions, annotate=True)$/;"	kind:variable	line:39
+ext_modules	../src/setup_looping.py	/^    ext_modules=cythonize(extensions, annotate=True)$/;"	kind:variable	line:19
+ext_modules	../src/setup_sqd.py	/^    ext_modules = cythonize(extensions, annotate=True)$/;"	kind:variable	line:39
+extensions	../src/setup.py	/^extensions = [Extension("misc_kmeans",$/;"	kind:variable	line:25
+extensions	../src/setup_gemm.py	/^extensions = [Extension("gemm",$/;"	kind:variable	line:7
+extensions	../src/setup_kmpp.py	/^extensions = [Extension("kmpp",$/;"	kind:variable	line:32
+extensions	../src/setup_looping.py	/^extensions = [Extension("looping",$/;"	kind:variable	line:12
+extensions	../src/setup_sqd.py	/^extensions = [Extension("square_dist",$/;"	kind:variable	line:32
+extra_compile_args	../src/setup.py	/^                        extra_compile_args=compile_args,$/;"	kind:variable	line:27
+extra_compile_args	../src/setup_gemm.py	/^                        extra_compile_args=['-ffast-math', '-fopenmp'],$/;"	kind:variable	line:9
+extra_compile_args	../src/setup_kmpp.py	/^                        extra_compile_args=compile_args,$/;"	kind:variable	line:34
+extra_compile_args	../src/setup_looping.py	/^                        extra_compile_args=compile_args,$/;"	kind:variable	line:14
+extra_compile_args	../src/setup_sqd.py	/^                        extra_compile_args=compile_args,$/;"	kind:variable	line:34
+extra_link_args	../src/setup.py	/^                        extra_link_args=link_args,$/;"	kind:variable	line:28
+extra_link_args	../src/setup_gemm.py	/^                        extra_link_args=["-fopenmp"],$/;"	kind:variable	line:10
+extra_link_args	../src/setup_kmpp.py	/^                        extra_link_args=link_args,$/;"	kind:variable	line:35
+extra_link_args	../src/setup_looping.py	/^                        extra_link_args=link_args,$/;"	kind:variable	line:15
+extra_link_args	../src/setup_sqd.py	/^                        extra_link_args=link_args,$/;"	kind:variable	line:35
+ff_kmeans	../src/misc_kmeans.pyx	/^cpdef void ff_kmeans(float[::1] points, int[::1] clusters,$/;"	kind:function	line:58
+full_loop_min_dist_no_prange	../src/square_dist.pyx	/^cpdef double full_loop_min_dist_no_prange(np.ndarray[np.float32_t, ndim=2] points,$/;"	kind:function	line:33
+full_loop_min_dist_prange_sample	../src/square_dist.pyx	/^cpdef double full_loop_min_dist_prange_sample(np.ndarray[np.float32_t, ndim=2] points,$/;"	kind:function	line:73
+func	../src/run.py	/^func = int(sys.argv[3])$/;"	kind:variable	line:7
+func	../src/run_sqd.py	/^    func = sqd.full_loop_min_dist_no_prange$/;"	kind:variable	line:13
+func	../src/run_sqd.py	/^    func = sqd.full_loop_min_dist_prange_sample$/;"	kind:variable	line:15
+func	../src/run_sqd.py	/^    func = sqd.pairwise_dist_full_loop_min_dist$/;"	kind:variable	line:21
+func	../src/run_sqd.py	/^    func = sqd.pairwise_dist_matmul_min_dist$/;"	kind:variable	line:25
+func	../src/run_sqd.py	/^    func = sqd.pairwise_dist_sgemm_min_dist$/;"	kind:variable	line:23
+func	../src/run_sqd.py	/^    func = sqd.sklearn_pairwise_dist_argmin$/;"	kind:variable	line:19
+func_id	../src/run_sqd.py	/^func_id = int(sys.argv[3])$/;"	kind:variable	line:8
+gemm	../src/test_gemm.pyx	/^cpdef np.int64_t gemm():$/;"	kind:function	line:12
+gflops	../src/bench_p_dist_argmin.py	/^        gflops = 1.0e-9 * ops \/ t$/;"	kind:variable	line:64
+gflops	../src/bench_p_dist_argmin.py	/^        gflops = 1.0e-9 * ops \/ t$/;"	kind:variable	line:69
+gflops	../src/bench_p_dist_argmin.py	/^        gflops = 1.0e-9 * ops \/ t$/;"	kind:variable	line:74
+include_dirs	../src/setup.py	/^                        include_dirs=[numpy.get_include()])]$/;"	kind:variable	line:29
+include_dirs	../src/setup_gemm.py	/^                        include_dirs=[numpy.get_include()])]$/;"	kind:variable	line:11
+include_dirs	../src/setup_kmpp.py	/^                        include_dirs=[numpy.get_include()])]$/;"	kind:variable	line:36
+include_dirs	../src/setup_looping.py	/^                        include_dirs=[numpy.get_include()])]$/;"	kind:variable	line:16
+include_dirs	../src/setup_sqd.py	/^                        include_dirs=[numpy.get_include()])]$/;"	kind:variable	line:36
+init	../src/bench_sklearn_vs_intel.py	/^init = sys.argv[5]$/;"	kind:variable	line:74
+init	../src/make_points.py	/^init = sys.argv[4]$/;"	kind:variable	line:16
+km	../src/bench_kmeans_wm.py	/^            km = KMeans(init=clusters,$/;"	kind:variable	line:35
+kmeans	../src/bench_kmeans_precompute.py	/^def kmeans(points, clusters, n_iter, precompute):$/;"	kind:function	line:8
+kmeans	../src/bench_sklearn_vs_intel.py	/^def kmeans(points, clusters, n_iter, distrib, algo, tol, init):$/;"	kind:function	line:9
+kmeans	../src/bench_sklearn_vs_intel_w_init.py	/^def kmeans(points, n_component, n_iter, distrib):$/;"	kind:function	line:8
+kmeans	../src/run.py	/^    kmeans = mk.kmeans_cython_des_kmeans$/;"	kind:variable	line:22
+kmeans	../src/run.py	/^    kmeans = mk.kmeans_cython_flat_kmeans$/;"	kind:variable	line:20
+kmeans	../src/run.py	/^    kmeans = mk.kmeans_cython_kmeans$/;"	kind:variable	line:18
+kmeans	../src/run.py	/^    kmeans = mk.kmeans_cython_mm_kmeans$/;"	kind:variable	line:24
+kmeans	../src/run.py	/^    kmeans = mk.kmeans_ff_kmeans$/;"	kind:variable	line:14
+kmeans	../src/run.py	/^    kmeans = mk.kmeans_python_kmeans$/;"	kind:variable	line:16
+kmeans	../src/run.py	/^    kmeans = mk.kmeans_sklearn_KMeans$/;"	kind:variable	line:12
+kmeans_cython_des_kmeans	../src/misc_kmeans.pyx	/^def kmeans_cython_des_kmeans(points, n_cluster, nb_iter):$/;"	kind:function	line:253
+kmeans_cython_flat_kmeans	../src/misc_kmeans.pyx	/^def kmeans_cython_flat_kmeans(points, n_cluster, nb_iter):$/;"	kind:function	line:188
+kmeans_cython_kmeans	../src/misc_kmeans.pyx	/^def kmeans_cython_kmeans(points, n_cluster, nb_iter):$/;"	kind:function	line:122
+kmeans_cython_mm_kmeans	../src/misc_kmeans.pyx	/^def kmeans_cython_mm_kmeans(points, n_cluster, nb_iter):$/;"	kind:function	line:321
+kmeans_ff_kmeans	../src/misc_kmeans.pyx	/^def kmeans_ff_kmeans(points, n_cluster, nb_iter):$/;"	kind:function	line:37
+kmeans_python_kmeans	../src/misc_kmeans.pyx	/^def kmeans_python_kmeans(points, n_cluster, nb_iter):$/;"	kind:function	line:99
+kmeans_sklearn_KMeans	../src/misc_kmeans.pyx	/^def kmeans_sklearn_KMeans(points, n_cluster, nb_iter):$/;"	kind:function	line:17
+kmpp	../src/my_kmpp.pyx	/^def kmpp(X, n_clusters, x_squared_norms, n_local_trials):$/;"	kind:function	line:8
+link_args	../src/setup.py	/^    link_args = ["-fopenmp"]$/;"	kind:variable	line:9
+link_args	../src/setup.py	/^    link_args = ["-qopenmp"]$/;"	kind:variable	line:16
+link_args	../src/setup.py	/^    link_args = []$/;"	kind:variable	line:23
+link_args	../src/setup_kmpp.py	/^    link_args = ["-fopenmp"]$/;"	kind:variable	line:16
+link_args	../src/setup_kmpp.py	/^    link_args = ["-fopenmp"]$/;"	kind:variable	line:9
+link_args	../src/setup_kmpp.py	/^    link_args = ["-qopenmp"]$/;"	kind:variable	line:23
+link_args	../src/setup_kmpp.py	/^    link_args = []$/;"	kind:variable	line:30
+link_args	../src/setup_looping.py	/^link_args = ["-fopenmp"]$/;"	kind:variable	line:10
+link_args	../src/setup_sqd.py	/^    link_args = ["-fopenmp"]$/;"	kind:variable	line:16
+link_args	../src/setup_sqd.py	/^    link_args = ["-fopenmp"]$/;"	kind:variable	line:9
+link_args	../src/setup_sqd.py	/^    link_args = ["-qopenmp"]$/;"	kind:variable	line:23
+link_args	../src/setup_sqd.py	/^    link_args = []$/;"	kind:variable	line:30
+looping.pyx	../src/looping.pyx	1;"	kind:file	line:1
+make_points.py	../src/make_points.py	1;"	kind:file	line:1
+max_iter	../src/bench_kmeans_wm.py	/^                        max_iter=n_iter,$/;"	kind:variable	line:40
+misc_kmeans.pyx	../src/misc_kmeans.pyx	1;"	kind:file	line:1
+my_kmpp.pyx	../src/my_kmpp.pyx	1;"	kind:file	line:1
+n_cluster	../src/run.py	/^n_cluster = int(sys.argv[1])$/;"	kind:variable	line:5
+n_clusters	../src/bench_kmeans_wm.py	/^                        n_clusters=n_component,$/;"	kind:variable	line:38
+n_component	../src/bench_kmeans_wm.py	/^n_component = 1000$/;"	kind:variable	line:10
+n_component	../src/bench_sklearn_vs_intel_w_init.py	/^n_component = int(sys.argv[3])$/;"	kind:variable	line:45
+n_component	../src/make_points.py	/^n_component = int(sys.argv[3])$/;"	kind:variable	line:10
+n_component	../src/run_sqd.py	/^n_component = int(sys.argv[1])$/;"	kind:variable	line:6
+n_dim	../src/make_points.py	/^n_dim = int(sys.argv[2])$/;"	kind:variable	line:9
+n_feature	../src/bench_kmeans_wm.py	/^n_feature = 50$/;"	kind:variable	line:9
+n_init	../src/bench_kmeans_wm.py	/^                        n_init=1,$/;"	kind:variable	line:36
+n_iter	../src/bench_kmeans_precompute.py	/^n_iter = int(sys.argv[1])$/;"	kind:variable	line:31
+n_iter	../src/bench_kmeans_wm.py	/^n_iter = 4$/;"	kind:variable	line:6
+n_iter	../src/bench_p_dist_argmin.py	/^n_iter = 20$/;"	kind:variable	line:6
+n_iter	../src/bench_sklearn_vs_intel.py	/^n_iter = int(sys.argv[1])$/;"	kind:variable	line:64
+n_iter	../src/bench_sklearn_vs_intel_w_init.py	/^n_iter = int(sys.argv[1])$/;"	kind:variable	line:39
+n_iter	../src/run.py	/^n_iter = int(sys.argv[2])$/;"	kind:variable	line:6
+n_iter	../src/run_sqd.py	/^n_iter = int(sys.argv[2])$/;"	kind:variable	line:7
+n_sample	../src/bench_kmeans_wm.py	/^n_sample = 100000$/;"	kind:variable	line:8
+n_sample	../src/make_points.py	/^n_sample = int(sys.argv[1])$/;"	kind:variable	line:8
+n_sample_feature_component	../src/bench_p_dist_argmin.py	/^n_sample_feature_component = [[1000,3,10],$/;"	kind:variable	line:9
+pairwise_dist_full_loop_min_dist	../src/square_dist.pyx	/^cpdef double pairwise_dist_full_loop_min_dist(np.ndarray[np.float32_t, ndim=2] points,$/;"	kind:function	line:127
+pairwise_dist_matmul_min_dist	../src/square_dist.pyx	/^cpdef pairwise_dist_matmul_min_dist(np.ndarray[np.float32_t, ndim=2] points,$/;"	kind:function	line:250
+pairwise_dist_sgemm_min_dist	../src/square_dist.pyx	/^cpdef pairwise_dist_sgemm_min_dist(np.ndarray[np.float32_t, ndim=2] points,$/;"	kind:function	line:187
+points	../src/bench_kmeans_precompute.py	/^points = np.loadtxt("points.csv", delimiter=',', dtype=np.float32)$/;"	kind:variable	line:28
+points	../src/bench_kmeans_wm.py	/^points = np.random.random_sample((n_sample, n_feature)).astype(np.float32)$/;"	kind:variable	line:22
+points	../src/bench_p_dist_argmin.py	/^        points = np.random.random_sample((n_sample, n_feature)).astype('float32')$/;"	kind:variable	line:61
+points	../src/bench_sklearn_vs_intel.py	/^points = np.loadtxt("points.csv", delimiter=',', dtype=np.float32)$/;"	kind:variable	line:61
+points	../src/bench_sklearn_vs_intel_w_init.py	/^points = np.loadtxt("points.csv", delimiter=',', dtype=np.float32)$/;"	kind:variable	line:37
+points	../src/run.py	/^points = np.loadtxt("points.csv", delimiter=',', dtype=np.float32)$/;"	kind:variable	line:9
+points	../src/run_sqd.py	/^points = np.loadtxt("points.csv", delimiter=',', dtype=np.float32)$/;"	kind:variable	line:10
+precompute	../src/bench_kmeans_precompute.py	/^precompute = bool(sys.argv[3])$/;"	kind:variable	line:37
+precompute_distances	../src/bench_kmeans_wm.py	/^                        precompute_distances=True)$/;"	kind:variable	line:42
+print_res	../src/misc_kmeans.pyx	/^def print_res(n_sample, n_cluster, n_dim, n_iter, t0, t1, whose):$/;"	kind:function	line:9
+print_res	../src/square_dist.pyx	/^def print_res(ops, t, n_iter, func_name, option='full'):$/;"	kind:function	line:9
+python_kmeans	../src/misc_kmeans.pyx	/^def python_kmeans(points, n_cluster, nb_iter):$/;"	kind:function	line:108
+random_state	../src/bench_kmeans_wm.py	/^                        random_state=0,$/;"	kind:variable	line:39
+run.py	../src/run.py	1;"	kind:file	line:1
+run_sqd.py	../src/run_sqd.py	1;"	kind:file	line:1
+s	../src/bench_kmeans_wm.py	/^            s = str(wm) + "," + str(t) + "\\n"$/;"	kind:variable	line:46
+s	../src/bench_looping.py	/^            s = str(chunk_size) + ',' + str(t1) + ',' + str(t2) + '\\n'$/;"	kind:variable	line:16
+s	../src/bench_p_dist_argmin.py	/^        s = str(n_sample) + "," + str(n_feature) + "," + str(n_component) + ",matmul," + str(gflops) + "\\n"$/;"	kind:variable	line:70
+s	../src/bench_p_dist_argmin.py	/^        s = str(n_sample) + "," + str(n_feature) + "," + str(n_component) + ",sgemm," + str(gflops) + "\\n"$/;"	kind:variable	line:65
+s	../src/bench_p_dist_argmin.py	/^        s = str(n_sample) + "," + str(n_feature) + "," + str(n_component) + ",sklearn," + str(gflops) + "\\n"$/;"	kind:variable	line:75
+setup.py	../src/setup.py	1;"	kind:file	line:1
+setup_gemm.py	../src/setup_gemm.py	1;"	kind:file	line:1
+setup_kmpp.py	../src/setup_kmpp.py	1;"	kind:file	line:1
+setup_looping.py	../src/setup_looping.py	1;"	kind:file	line:1
+setup_sqd.py	../src/setup_sqd.py	1;"	kind:file	line:1
+size_M	../src/bench_looping.py	/^size_M = 20$/;"	kind:variable	line:4
+sklearn_pairwise_dist_argmin	../src/square_dist.pyx	/^def sklearn_pairwise_dist_argmin(points, clusters, centroids, n_iter):$/;"	kind:function	line:111
+sources	../src/setup.py	/^                        sources=["misc_kmeans.pyx"],$/;"	kind:variable	line:26
+sources	../src/setup_gemm.py	/^                        sources=["test_gemm.pyx"],$/;"	kind:variable	line:8
+sources	../src/setup_kmpp.py	/^                        sources=["src\/my_kmpp.pyx"],$/;"	kind:variable	line:33
+sources	../src/setup_looping.py	/^                        sources=["looping.pyx"],$/;"	kind:variable	line:13
+sources	../src/setup_sqd.py	/^                        sources=["square_dist.pyx"],$/;"	kind:variable	line:33
+square_dist	../src/square_dist.pyx	/^def square_dist(func, points, n_component, n_iter):$/;"	kind:function	line:19
+square_dist.pyx	../src/square_dist.pyx	1;"	kind:file	line:1
+t	../src/bench_kmeans_wm.py	/^            t = time.time() - t$/;"	kind:variable	line:44
+t	../src/bench_kmeans_wm.py	/^            t = time.time()$/;"	kind:variable	line:34
+t	../src/make_points.py	/^    t = time.time() - t$/;"	kind:variable	line:22
+t	../src/make_points.py	/^    t = time.time()$/;"	kind:variable	line:19
+t1	../src/bench_looping.py	/^            t1 = chunked_loop(X, chunk_size)$/;"	kind:variable	line:14
+t2	../src/bench_looping.py	/^            t2 = chunked_loop_b(X, chunk_size)$/;"	kind:variable	line:15
+test_gemm.pyx	../src/test_gemm.pyx	1;"	kind:file	line:1
+tol	../src/bench_kmeans_wm.py	/^                        tol=0,$/;"	kind:variable	line:37
+tol	../src/bench_sklearn_vs_intel.py	/^tol = bool(int(sys.argv[4]))$/;"	kind:variable	line:72
+working_memory	../src/bench_kmeans_wm.py	/^working_memory = [0.1, 0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,$/;"	kind:variable	line:18
+working_memory	../src/run_sqd.py	/^    working_memory = float(sys.argv[4])$/;"	kind:variable	line:17
+x_squared_norms	../src/make_points.py	/^    x_squared_norms = row_norms(points, squared=True)$/;"	kind:variable	line:18
