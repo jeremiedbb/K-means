@@ -79,9 +79,9 @@ def bench_chunk_size(n_samples, n_clusters, n_features, n_tests):
 
 
 def bench_data_size(n_tests, L3, impl):
-    n_samples = [2**i for i in np.arange(10, 21)]
-    n_clusters = [2**j for j in np.arange(3, 11)]
-    n_features = [2**k for k in np.arange(1, 8)]
+    n_samples = [2**i for i in np.arange(10, 20)]
+    n_clusters = [2**j for j in np.arange(3, 10)]
+    n_features = [2**k for k in np.arange(1, 7)]
 
     n_tot = 0
     for ns in n_samples:
@@ -100,7 +100,7 @@ def bench_data_size(n_tests, L3, impl):
                         X = np.random.random_sample((ns, nf)).astype(np.float32)
                         centers = X[np.random.choice(np.arange(X.shape[0]), nc)]
 
-                        n_samples_chunk = L3 * 2**18 / (2 * nc)
+                        n_samples_chunk = 2**9
 
                         t = time.time()
 
@@ -113,7 +113,7 @@ def bench_data_size(n_tests, L3, impl):
                             km.fit(X)
                             n_iter = km.n_iter_
                         elif impl == 'intel':
-                            km = KMeans(n_clusters=nc, init=centers, n_init=1, max_iter=20,
+                            km = KMeans(n_clusters=int(nc), init=centers, n_init=1, max_iter=20,
                                         tol=0, algorithm='full')
                             km.fit(X)
                             n_iter = km.n_iter_
@@ -135,4 +135,6 @@ def bench_data_size(n_tests, L3, impl):
                     idx += 1
 
 
-bench_chunk_size(2**17, 2**10, 2**1, 20)
+#bench_one(2**17, 2**9, 2**1, 4, 20)
+bench_chunk_size(2**18, 2**12, 2**1, 3)
+#bench_data_size(20, 4, 'intel')

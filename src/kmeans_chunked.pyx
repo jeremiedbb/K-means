@@ -47,7 +47,7 @@ cdef void _labels_inertia_centers_chunk(floating *X_chunk,
 
         floating *pdist_eff = \
             <floating*> malloc(n_samples_chunk * n_clusters * sizeof(floating))
-    
+
     # Instead of computing the full pairwise squared distances matrix,
     # ||X - C||² = ||X||² - 2 X.C^T + ||C||², we only need to store
     # the - 2 X.C^T + ||C||² term since the argmin for a given sample only
@@ -69,7 +69,8 @@ cdef void _labels_inertia_centers_chunk(floating *X_chunk,
                 min_sq_dist_eff = sq_dist_eff
                 best_cluster = j
 
-        inertia[0] += x_squared_norms_chunk[i] + min_sq_dist_eff
+        if x_squared_norms_chunk[i] + min_sq_dist_eff > 0:
+            inertia[0] += x_squared_norms_chunk[i] + min_sq_dist_eff
         labels_chunk[i] = best_cluster
         clusters_pop[best_cluster] += 1  
         for k in xrange(n_features):      
@@ -135,7 +136,6 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
         floating *inertia_chunk
         floating *centers_new_chunk
         int *clusters_pop_chunk
-        #floating *centers_squared_norms_local
 
     # reset all arrays at each iteration
     memcpy(&centers_old[0, 0], &centers_new[0, 0],
@@ -155,15 +155,13 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
         centers_new_chunk = \
             <floating*> malloc(n_clusters * n_features * sizeof(floating))
         clusters_pop_chunk = <int*> malloc(n_clusters * sizeof(int))
-        #centers_squared_norms_local = \
-        #    <floating*> malloc(n_clusters * sizeof(floating))
+        centers_squared_norms_local = \
+            <floating*> malloc(n_clusters * sizeof(floating))
 
         inertia_chunk[0] = 0.0
         memset(clusters_pop_chunk, 0, n_clusters * sizeof(int))
         memset(centers_new_chunk, 0,
                n_clusters * n_features * sizeof(floating))
-        #memcpy(&centers_squared_norms_local[0], &centers_squared_norms[0],
-        #       n_clusters * sizeof(floating))
 
         for chunk_idx in prange(n_chunks):
             _labels_inertia_centers_chunk(
