@@ -11,9 +11,12 @@ def kmeans(X, centers, n_samples_chunk, max_iter):
     centers_new = centers.copy()
     labels = np.zeros(X.shape[0], dtype=np.int32)
 
+    sample_weight = np.ones(X.shape[0], dtype=X.dtype)
+
     for i in range(max_iter):
 
         inertia = kmeans_lloyd_chunked(X,
+                                       sample_weight,
                                        x_squared_norms,
                                        centers_old,
                                        centers_new,
@@ -26,6 +29,7 @@ def kmeans(X, centers, n_samples_chunk, max_iter):
 
     if center_shift > 0:
         inertia = kmeans_lloyd_chunked(X,
+                                       sample_weight,
                                        x_squared_norms,
                                        centers_old,
                                        centers_new,
@@ -135,6 +139,6 @@ def bench_data_size(n_tests, L3, impl):
                     idx += 1
 
 
-#bench_one(2**17, 2**9, 2**1, 4, 20)
-bench_chunk_size(2**18, 2**12, 2**1, 3)
+bench_one(2**16, 2**9, 2**6, 4, 20)
+#bench_chunk_size(2**18, 2**12, 2**1, 3)
 #bench_data_size(20, 4, 'intel')
