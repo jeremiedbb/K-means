@@ -46,11 +46,6 @@ cdef void _labels_inertia_centers_chunk(floating *X_chunk,
         char *trans_data = 'n'
         char *trans_centers = 't'
 
-    # set local buffers to 0. pairwise distances is set below
-    inertia[0] = 0.0
-    memset(centers_new, 0, n_clusters * n_features * sizeof(floating))
-    memset(weight_in_cluster, 0, n_clusters * sizeof(floating))
-
     # Instead of computing the full pairwise squared distances matrix,
     # ||X - C||² = ||X||² - 2 X.C^T + ||C||², we only need to store
     # the - 2 X.C^T + ||C||² term since the argmin for a given sample only
@@ -88,7 +83,7 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
                                     floating[:, ::1] centers_old,
                                     floating[:, ::1] centers_new,
                                     int[::1] labels,
-                                    int n_samples_chunk) nogil:
+                                    int n_samples_chunk):
     """Single interation of K-means lloyd algorithm
 
     Update labels and centers (inplace), and compute inertia, for one
@@ -156,7 +151,11 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
 
     #memset(&labels[0], 0, n_samples * sizeof(int))
     memset(&centers_new[0, 0], 0, n_clusters * n_features * sizeof(floating))
-    memset(weight_in_cluster, 0, n_clusters * sizeof(float))
+    memset(weight_in_cluster, 0, n_clusters * sizeof(floating))
+
+    for j in xrange(n_clusters):
+        if weight_in_cluster[j] > 0:
+            print(weight_in_cluster[j])
 
     with nogil, parallel():
         inertia_chunk = <floating*> malloc(sizeof(floating))
@@ -169,6 +168,10 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
 
         pairwise_distances_chunk = \
             <floating*> malloc(n_samples_chunk * n_clusters * sizeof(floating))
+
+        inertia_chunk[0] = 0.0
+        memset(centers_new_chunk, 0, n_clusters * n_features * sizeof(floating))
+        memset(weight_in_cluster_chunk, 0, n_clusters * sizeof(floating))
 
         for chunk_idx in prange(n_chunks):
             _labels_inertia_centers_chunk(

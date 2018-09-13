@@ -14,7 +14,6 @@ def kmeans(X, centers, n_samples_chunk, max_iter):
     sample_weight = np.ones(X.shape[0], dtype=X.dtype)
 
     for i in range(max_iter):
-
         inertia = kmeans_lloyd_chunked(X,
                                        sample_weight,
                                        x_squared_norms,
@@ -43,7 +42,7 @@ def bench_one(n_samples, n_clusters, n_features, L3, n_tests):
     X = np.random.random_sample((n_samples, n_features)).astype(np.float32)
     centers = X[np.random.choice(np.arange(X.shape[0]), n_clusters)]
 
-    n_samples_chunk = int(L3 * 2**18 / (2 * n_clusters))
+    n_samples_chunk = 2**8
 
     ts = np.zeros(n_tests)
     for test in range(n_tests):
@@ -139,6 +138,6 @@ def bench_data_size(n_tests, L3, impl):
                     idx += 1
 
 
-bench_one(2**16, 2**9, 2**6, 4, 20)
-#bench_chunk_size(2**18, 2**12, 2**1, 3)
+bench_one(2**16, 2**9, 2**6, 4, 10)
+#bench_chunk_size(2**16, 2**9, 2**6, 10)
 #bench_data_size(20, 4, 'intel')
