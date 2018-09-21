@@ -82,8 +82,7 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
                                     floating[::1] x_squared_norms,
                                     floating[:, ::1] centers_old,
                                     floating[:, ::1] centers_new,
-                                    int[::1] labels,
-                                    int n_samples_chunk):
+                                    int[::1] labels):
     """Single interation of K-means lloyd algorithm
 
     Update labels and centers (inplace), and compute inertia, for one
@@ -120,9 +119,10 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
         int n_features = X.shape[1]
         int n_clusters = centers_new.shape[0]
 
+        int n_samples_chunk = 256
         int n_chunks = n_samples // n_samples_chunk
         int n_samples_r = n_samples % n_samples_chunk
-        int chunk_idx
+        int chunk_idx, n_samples_chunk_eff
 
         int j, k
         floating alpha
@@ -140,6 +140,9 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
         floating *weight_in_cluster_chunk
         floating *pairwise_distances_chunk
 
+    # count remainder for total number of chunks
+    n_chunks += n_samples != n_chunks * n_samples_chunk
+    
     # reset all arrays at each iteration
     memcpy(&centers_old[0, 0], &centers_new[0, 0],
            n_clusters * n_features * sizeof(floating))
@@ -174,6 +177,11 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
         memset(weight_in_cluster_chunk, 0, n_clusters * sizeof(floating))
 
         for chunk_idx in prange(n_chunks):
+            if n_samples_r > 0 and chunk_idx == n_chunks - 1:
+                n_samples_chunk_eff = n_samples_r
+            else:
+                n_samples_chunk_eff = n_samples_chunk
+
             _labels_inertia_centers_chunk(
                 &X[chunk_idx * n_samples_chunk, 0],
                 &sample_weight[chunk_idx * n_samples_chunk],
@@ -184,23 +192,7 @@ cpdef floating kmeans_lloyd_chunked(floating[:, ::1] X,
                 weight_in_cluster_chunk,
                 pairwise_distances_chunk,
                 &labels[chunk_idx * n_samples_chunk],
-                n_samples_chunk,
-                n_clusters,
-                n_features,
-                inertia_chunk)
-
-        if n_samples_r > 0:
-            _labels_inertia_centers_chunk(
-                &X[n_chunks * n_samples_chunk, 0],
-                &sample_weight[n_chunks * n_samples_chunk],
-                &x_squared_norms[n_chunks * n_samples_chunk],
-                &centers_old[0, 0],
-                centers_new_chunk,
-                centers_squared_norms,
-                weight_in_cluster_chunk,
-                pairwise_distances_chunk,
-                &labels[n_chunks * n_samples_chunk],
-                n_samples_r,
+                n_samples_chunk_eff,
                 n_clusters,
                 n_features,
                 inertia_chunk)
