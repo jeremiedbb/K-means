@@ -23,12 +23,14 @@ def bench_one(n_samples, n_clusters, n_features, n_tests):
 
     tm = ts.mean()
     tstd = ts.std()
-    print(str(tm) + ',' + str(tstd))
-
+    print('elkan,' + str(n_samples) + ',' + str(n_clusters) + ',' + str(n_features) + ',' + str(tm) + ',' + str(tstd))
 
 n_tests = 5
 n_samples = 10000
 n_clusters = 1000
 
-for n_features in [2**j for j in np.arange(1, 15)]:
+for n_features in [2**j for j in np.arange(1, 14)]:
     bench_one(n_samples, n_clusters, n_features, n_tests)
+
+
+# bench_one(100000, 100, 100, 5)
